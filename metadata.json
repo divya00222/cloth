@@ -1,0 +1,6 @@
+{
+  "name": "BALAJI Clothing Store Architecture",
+  "description": "Software Architecture Document for BALAJI - Premium Clothing Store (Core PHP, MySQL, Vanilla JS, HTML5, CSS3)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
