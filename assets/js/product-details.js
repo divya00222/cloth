@@ -241,6 +241,10 @@ const ProductDetailsController = {
   updateMainGalleryImage() {
     const mainImg = document.getElementById('pdp-main-image');
     if (mainImg) {
+      mainImg.onerror = function() {
+        this.onerror = null;
+        this.src = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000' viewBox='0 0 800 1000'%3E%3Crect width='100%25' height='100%25' fill='%23F4F1EA'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='32' fill='%23111111' letter-spacing='2'%3EAURA ATELIER%3C/text%3E%3C/svg%3E";
+      };
       mainImg.src = this.state.galleryImages[this.state.currentImageIndex];
       mainImg.alt = `${this.product.name} view ${this.state.currentImageIndex + 1}`;
     }
@@ -267,7 +271,7 @@ const ProductDetailsController = {
       <button class="thumb-btn ${i === this.state.currentImageIndex ? 'active' : ''}" 
               data-index="${i}" 
               aria-label="View thumbnail ${i + 1}">
-        <img src="${src}" alt="${this.product.name} thumbnail ${i + 1}">
+        <img src="${src}" alt="${this.product.name} thumbnail ${i + 1}" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'1000\' viewBox=\'0 0 800 1000\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23F4F1EA\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Georgia, serif\' font-size=\'32\' fill=\'%23111111\' letter-spacing=\'2\'%3EAURA ATELIER%3C/text%3E%3C/svg%3E';">
       </button>
     `).join('');
 

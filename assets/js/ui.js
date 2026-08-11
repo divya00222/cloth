@@ -4,6 +4,7 @@
 
 const RECENT_SEARCHES_KEY = 'aura_recent_searches';
 const USER_STORAGE_KEY = 'aura_demo_user';
+const DEFAULT_IMAGE_PLACEHOLDER = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000' viewBox='0 0 800 1000'%3E%3Crect width='100%25' height='100%25' fill='%23F4F1EA'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='32' fill='%23111111' letter-spacing='2'%3EAURA ATELIER%3C/text%3E%3C/svg%3E";
 
 const UIManager = {
   FREE_SHIPPING_THRESHOLD: 3000,
@@ -95,7 +96,7 @@ const UIManager = {
 
       <!-- Reusable Festive Campaign Banner Component -->
       <div class="nepal-campaign-banner reveal active">
-        <img src="${activeCamp.image}" alt="${activeCamp.name}" class="campaign-banner-bg" loading="lazy">
+        <img src="${activeCamp.image}" alt="${activeCamp.name}" class="campaign-banner-bg" loading="lazy" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_PLACEHOLDER}'">
         <div class="campaign-banner-overlay"></div>
         <div class="campaign-banner-content">
           <div class="campaign-badge">
@@ -184,8 +185,8 @@ const UIManager = {
       <article class="product-card" data-product-id="${product.id}">
         <div class="product-image-wrapper">
           <a href="product.html?id=${product.id}" style="display: block; width: 100%; height: 100%;">
-            <img src="${product.images.main}" alt="${product.name}" class="product-img product-img-main" loading="lazy">
-            <img src="${product.images.hover}" alt="${product.name} alternate view" class="product-img product-img-hover" loading="lazy">
+            <img src="${product.images.main}" alt="${product.name}" class="product-img product-img-main" loading="lazy" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_PLACEHOLDER}'">
+            <img src="${product.images.hover}" alt="${product.name} alternate view" class="product-img product-img-hover" loading="lazy" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_PLACEHOLDER}'">
           </a>
           
           <div class="product-badges">
@@ -272,7 +273,7 @@ const UIManager = {
         </button>
 
         <div style="background-color: var(--color-surface-secondary); position: relative;">
-          <img src="${product.images.main}" id="modal-main-image" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="${product.images.main}" id="modal-main-image" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_PLACEHOLDER}'">
         </div>
 
         <div style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
@@ -401,7 +402,7 @@ const UIManager = {
 
     cartBody.innerHTML = cartItems.map(item => `
       <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+        <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE_PLACEHOLDER}'">
         <div class="cart-item-details">
           <div>
             <h4 class="cart-item-title">${item.name}</h4>
