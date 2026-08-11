@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag | AURA Fashion Studios</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">FREE SHIPPING ON ORDERS OVER NPR 3,000 &bull; EASY 30-DAY RETURNS</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+      <nav class="nav-desktop">
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="offers.html" class="nav-link" style="color: var(--color-sale);">Offers</a>
+      </nav>
+      <div class="header-actions">
+        <button class="action-icon-btn search-trigger-btn" aria-label="Search Catalog">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="action-icon-btn account-trigger-btn" aria-label="Account Login">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </a>
+        <button class="action-icon-btn cart-trigger-btn" aria-label="Shopping Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">YOUR SELECTION</span>
+        <h1 class="section-title">SHOPPING BAG</h1>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;" id="full-cart-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none;">
+        <div>&copy; 2026 AURA Fashion Studios. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script>
+    function renderFullCart() {
+      const container = document.getElementById('full-cart-container');
+      const cart = CartStore.getCart();
+      const subtotal = CartStore.getCartSubtotal();
+
+      if (!container) return;
+
+      if (cart.length === 0) {
+        container.style.gridTemplateColumns = '1fr';
+        container.innerHTML = `
+          <div style="text-align: center; padding: 4rem 1rem;">
+            <h2 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem;">Your shopping bag is empty</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Explore our latest arrivals and elevate your wardrobe.</p>
+            <a href="shop.html" class="btn btn-primary">EXPLORE CATALOG</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          ${cart.map(item => `
+            <div style="display: flex; gap: 1.5rem; padding: 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+              <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 130px; object-fit: cover; border-radius: var(--radius-xs);">
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-primary);">${item.name}</h3>
+                  <div style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: 0.25rem;">Size: ${item.size} | Color: ${item.color}</div>
+                  <div style="font-weight: 700; color: var(--color-primary); margin-top: 0.5rem;">${ProductsAPI.formatPrice(item.price)}</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                  <div class="qty-control">
+                    <button class="qty-btn" onclick="CartStore.updateQuantity('${item.cartItemId}', ${item.quantity - 1}); renderFullCart();">-</button>
+                    <span class="qty-input">${item.quantity}</span>
+                    <button class="qty-btn" onclick="CartStore.updateQuantity('${item.cartItemId}', ${item.quantity + 1}); renderFullCart();">+</button>
+                  </div>
+                  <button onclick="CartStore.removeFromCart('${item.cartItemId}'); renderFullCart();" style="color: var(--color-sale); font-size: 0.8125rem; text-decoration: underline;">Remove Item</button>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 2rem; border-radius: var(--radius-sm); height: fit-content; display: flex; flex-direction: column; gap: 1.25rem;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">ORDER SUMMARY</h3>
+          <div style="display: flex; justify-content: space-between; font-size: 0.95rem;">
+            <span>Bag Subtotal</span>
+            <span style="font-weight: 700;">${ProductsAPI.formatPrice(subtotal)}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.95rem;">
+            <span>Estimated Shipping</span>
+            <span style="color: var(--color-success); font-weight: 600;">FREE</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; border-top: 1px solid var(--color-border); padding-top: 1rem; color: var(--color-primary);">
+            <span>Total Amount</span>
+            <span>${ProductsAPI.formatPrice(subtotal)}</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 0.5rem;">PROCEED TO CHECKOUT</a>
+        </div>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      UIManager.init();
+      renderFullCart();
+      window.addEventListener('cartUpdated', renderFullCart);
+    });
+  </script>
+</body>
+</html>

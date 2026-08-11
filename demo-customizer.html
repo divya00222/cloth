@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Campaign & Brand Customizer | AURA Fashion Studios</title>
+  <meta name="description" content="Live management and customizer tool for AURA Fashion Studios campaign banners, Nepalese festival offers, shipping rates, and store settings.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .customizer-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 992px) {
+      .customizer-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .customizer-panel {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 1.75rem;
+      border-radius: var(--radius-sm);
+      position: sticky;
+      top: 90px;
+      box-shadow: var(--shadow-card);
+    }
+    .control-group {
+      margin-bottom: 1.5rem;
+    }
+    .control-label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+    .form-control-custom {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      background-color: var(--color-bg);
+      font-size: 0.875rem;
+      transition: var(--transition-fast);
+    }
+    .form-control-custom:focus {
+      border-color: var(--color-primary);
+      background-color: var(--color-surface);
+    }
+    .campaign-preset-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      background: var(--color-bg);
+      text-align: left;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+      transition: var(--transition-fast);
+    }
+    .campaign-preset-btn.active {
+      border-color: var(--color-accent);
+      background: var(--color-accent-light);
+      color: var(--color-primary);
+    }
+    .preview-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement-bar">
+    <span>✨ ATELIER CAMPAIGN & BRAND CUSTOMIZER TOOL</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop Collection</a>
+        <a href="offers.html" class="nav-link">Festive Offers</a>
+        <a href="demo-customizer.html" class="nav-link active">Brand Customizer</a>
+        <a href="about.html" class="nav-link">Our Story</a>
+        <a href="contact.html" class="nav-link">Atelier Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="header-action-btn search-trigger-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge wishlist-count-badge">0</span>
+        </a>
+        <button class="header-action-btn cart-trigger-btn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge cart-count-badge">0</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Customizer Body -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrapper" style="text-align: left; margin-bottom: 2rem;">
+        <span class="section-subtitle">AURA ATELIER MANAGER</span>
+        <h1 class="section-title">STORE & CAMPAIGN CUSTOMIZER</h1>
+        <p style="color: var(--color-text-secondary); max-width: 650px; margin-top: 0.5rem;">
+          Tweak festival campaign banners, delivery thresholds, store phone/WhatsApp contact information, and live store configurations across the entire site in real-time.
+        </p>
+      </div>
+
+      <div class="customizer-layout">
+        
+        <!-- Left Panel: Controls -->
+        <aside class="customizer-panel">
+          <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
+            1. Festive Campaign Preset
+          </h3>
+
+          <div class="control-group">
+            <div id="campaign-presets-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; margin-top: 2rem;">
+            2. Nepal Delivery & Rates
+          </h3>
+
+          <div class="control-group">
+            <label class="control-label">Free Shipping Threshold (NPR)</label>
+            <input type="number" id="input-shipping-threshold" class="form-control-custom" value="3000" step="500">
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Kathmandu Valley Rate (NPR)</label>
+            <input type="number" id="input-shipping-valley" class="form-control-custom" value="100" step="10">
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Outside Valley Rate (NPR)</label>
+            <input type="number" id="input-shipping-outside" class="form-control-custom" value="150" step="10">
+          </div>
+
+          <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; margin-top: 2rem;">
+            3. Atelier Support Contacts
+          </h3>
+
+          <div class="control-group">
+            <label class="control-label">WhatsApp Number (+977)</label>
+            <input type="text" id="input-whatsapp-num" class="form-control-custom" value="9779801234567">
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Flagship Store Location</label>
+            <input type="text" id="input-store-addr" class="form-control-custom" value="Durbar Marg, Ward No. 1, Kathmandu, Nepal">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+            <button onclick="applyCustomizerSettings()" class="btn btn-primary" style="width: 100%;">
+              APPLY SETTINGS SITEWIDE
+            </button>
+            <button onclick="resetCustomizerDefaults()" class="btn btn-outline" style="width: 100%;">
+              RESET TO FACTORY DEFAULTS
+            </button>
+          </div>
+        </aside>
+
+        <!-- Right Panel: Live Preview Canvas -->
+        <div>
+          <div class="preview-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-primary);">
+                LIVE CAMPAIGN BANNER PREVIEW
+              </h3>
+              <span style="font-size: 0.75rem; font-weight: 700; background: var(--color-success-bg); color: var(--color-success); padding: 0.25rem 0.6rem; border-radius: 4px;">
+                ● LIVE SYNC
+              </span>
+            </div>
+
+            <!-- Campaign Banner Target Wrapper -->
+            <div id="nepal-campaign-banner-wrapper" style="margin-bottom: 2rem;"></div>
+
+            <!-- Store Configuration Live Summary Card -->
+            <div style="background-color: var(--color-surface-secondary); padding: 1.5rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border);">
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1rem;">
+                ACTIVE SITE CONFIGURATION SUMMARY
+              </h4>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+                <div>
+                  <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Active Campaign</div>
+                  <div id="summary-active-camp" style="font-weight: 700; color: var(--color-primary); margin-top: 2px;">Teej Festive Elegance</div>
+                </div>
+
+                <div>
+                  <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Free Shipping Threshold</div>
+                  <div id="summary-free-ship" style="font-weight: 700; color: var(--color-primary); margin-top: 2px;">NPR 3,000</div>
+                </div>
+
+                <div>
+                  <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Valley Delivery Rate</div>
+                  <div id="summary-valley-rate" style="font-weight: 700; color: var(--color-primary); margin-top: 2px;">NPR 100</div>
+                </div>
+
+                <div>
+                  <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Outside Valley Rate</div>
+                  <div id="summary-outside-rate" style="font-weight: 700; color: var(--color-primary); margin-top: 2px;">NPR 150</div>
+                </div>
+
+                <div>
+                  <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Flagship WhatsApp</div>
+                  <div id="summary-whatsapp" style="font-weight: 700; color: var(--color-primary); margin-top: 2px;">+977 9801234567</div>
+                </div>
+
+                <div>
+                  <div style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Atelier Store Location</div>
+                  <div id="summary-location" style="font-weight: 700; color: var(--color-primary); margin-top: 2px;">Durbar Marg, Ward 1, Kathmandu</div>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; text-align: right;">
+                <a href="checkout.html" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.8125rem;">
+                  TEST CHECKOUT EXPERIENCE &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: 1px solid var(--color-border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <p>&copy; 2026 AURA Fashion Studios. Nepal Atelier E-Commerce Demo.</p>
+        <div style="display: flex; gap: 1rem; font-size: 0.875rem;">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="offers.html">Festive Offers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      UIManager.init();
+      renderPresetButtons();
+      syncSummaryValues();
+    });
+
+    function renderPresetButtons() {
+      const container = document.getElementById('campaign-presets-list');
+      if (!container || typeof NEPAL_CONFIG === 'undefined') return;
+
+      const active = NEPAL_CONFIG.getActiveCampaign();
+      const camps = NEPAL_CONFIG.campaigns;
+
+      container.innerHTML = Object.keys(camps).map(key => {
+        const c = camps[key];
+        const isActive = c.key === active.key;
+        return `
+          <button class="campaign-preset-btn ${isActive ? 'active' : ''}" onclick="selectPreset('${c.key}')">
+            <span>${c.name}</span>
+            <span style="font-size: 0.75rem; opacity: 0.8;">${c.discount}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectPreset(key) {
+      NEPAL_CONFIG.setActiveCampaign(key);
+      renderPresetButtons();
+      syncSummaryValues();
+      UIManager.showToast(`Active campaign set to: ${NEPAL_CONFIG.getActiveCampaign().name}`, "Campaign Switch");
+    }
+
+    function syncSummaryValues() {
+      const camp = NEPAL_CONFIG.getActiveCampaign();
+      document.getElementById('summary-active-camp').textContent = camp.name;
+      document.getElementById('summary-free-ship').textContent = ProductsAPI.formatPrice(NEPAL_CONFIG.shipping.freeShippingThreshold);
+      document.getElementById('summary-valley-rate').textContent = ProductsAPI.formatPrice(NEPAL_CONFIG.shipping.insideValley.rate);
+      document.getElementById('summary-outside-rate').textContent = ProductsAPI.formatPrice(NEPAL_CONFIG.shipping.outsideValley.rate);
+      document.getElementById('summary-whatsapp').textContent = '+' + NEPAL_CONFIG.contact.whatsappNumber;
+      document.getElementById('summary-location').textContent = document.getElementById('input-store-addr').value;
+    }
+
+    function applyCustomizerSettings() {
+      const thresh = parseFloat(document.getElementById('input-shipping-threshold').value) || 3000;
+      const valley = parseFloat(document.getElementById('input-shipping-valley').value) || 100;
+      const outside = parseFloat(document.getElementById('input-shipping-outside').value) || 150;
+      const wa = document.getElementById('input-whatsapp-num').value.replace('+', '').trim() || '9779801234567';
+
+      NEPAL_CONFIG.shipping.freeShippingThreshold = thresh;
+      NEPAL_CONFIG.shipping.insideValley.rate = valley;
+      NEPAL_CONFIG.shipping.outsideValley.rate = outside;
+      NEPAL_CONFIG.contact.whatsappNumber = wa;
+
+      UIManager.FREE_SHIPPING_THRESHOLD = thresh;
+
+      syncSummaryValues();
+      UIManager.renderCampaignBanner();
+      UIManager.showToast("Sitewide store settings updated successfully!", "Settings Applied");
+    }
+
+    function resetCustomizerDefaults() {
+      NEPAL_CONFIG.setActiveCampaign('teej');
+      document.getElementById('input-shipping-threshold').value = 3000;
+      document.getElementById('input-shipping-valley').value = 100;
+      document.getElementById('input-shipping-outside').value = 150;
+      document.getElementById('input-whatsapp-num').value = '9779801234567';
+      document.getElementById('input-store-addr').value = 'Durbar Marg, Ward No. 1, Kathmandu, Nepal';
+
+      applyCustomizerSettings();
+      renderPresetButtons();
+      UIManager.showToast("Store settings restored to factory defaults.", "Defaults Restored");
+    }
+  </script>
+</body>
+</html>

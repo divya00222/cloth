@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | AURA Fashion Studios</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">FREE SHIPPING ON ORDERS OVER NPR 3,000 &bull; EASY 30-DAY RETURNS</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+      <nav class="nav-desktop">
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=kids" class="nav-link">Kids</a>
+        <a href="about.html" class="nav-link active">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="action-icon-btn search-trigger-btn" aria-label="Search Catalog">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="action-icon-btn account-trigger-btn" aria-label="Account Login">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </a>
+        <button class="action-icon-btn cart-trigger-btn" aria-label="Shopping Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="background-color: var(--color-surface-secondary); text-align: center; padding: 4rem 0;">
+    <div class="container">
+      <span class="section-subtitle">OUR HERITAGE</span>
+      <h1 class="section-title">THE AURA STORY</h1>
+      <p style="max-width: 650px; margin: 1rem auto 0; color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7;">Born from a vision of understated luxury and conscious craftsmanship, AURA Studios merges architectural tailoring with modern everyday confidence.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 900px; display: flex; flex-direction: column; gap: 3rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <img src="src/assets/images/category_women_1786432406848.jpg" alt="Atelier Craftsmanship" style="border-radius: var(--radius-sm); width: 100%;">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem; color: var(--color-primary);">Crafted with Purpose</h3>
+          <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 1rem;">We partner exclusively with certified organic mills and ethical ateliers in Italy and Nepal. Every garment is cut, sewn, and finished with meticulous care.</p>
+          <p style="color: var(--color-text-secondary); line-height: 1.7;">Our philosophy rejects disposable fast fashion in favor of timeless investment pieces designed to endure season after season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none;">
+        <div>&copy; 2026 AURA Fashion Studios. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer">
+    <div class="drawer-header"><h3 class="drawer-title">Bag</h3><button id="close-cart-drawer" class="close-btn">&times;</button></div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <a href="cart.html" class="btn btn-primary" style="width: 100%;">VIEW BAG</a>
+    </div>
+  </aside>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => UIManager.init());</script>
+</body>
+</html>

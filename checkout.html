@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal Checkout | AURA Fashion Studios</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">100% SECURE CHECKOUT &bull; DOORSTEP DELIVERY ACROSS NEPAL</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner" style="justify-content: space-between;">
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+      <a href="cart.html" style="font-size: 0.875rem; font-weight: 600; color: var(--color-primary); text-decoration: underline;">&larr; Return to Shopping Bag</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 1040px;">
+      <div class="section-title-wrapper" style="text-align: left; margin-bottom: 2rem;">
+        <span class="section-subtitle">NEPAL DELIVERY & PAYMENT</span>
+        <h1 class="section-title">EXPRESS CHECKOUT</h1>
+      </div>
+
+      <form id="checkout-form" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem;">
+        <!-- Left Side: Address, Shipping & Payment -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          
+          <!-- 1. Nepal Delivery Address -->
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.75rem; border-radius: var(--radius-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; margin-bottom: 1.25rem; color: var(--color-primary);">
+              1. Delivery Address (Nepal)
+            </h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Full Name *</label>
+                <input type="text" id="cust-fullname" required placeholder="Aarav Sharma" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Mobile Phone Number *</label>
+                <input type="tel" id="cust-phone" required placeholder="+977 9801234567" value="+977 " style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Email Address *</label>
+              <input type="email" id="cust-email" required placeholder="aarav.sharma@example.com" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+            </div>
+
+            <!-- Province & District Dropdowns -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Province *</label>
+                <select id="addr-province" required onchange="handleProvinceChange(this.value)" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs); background-color: var(--color-surface); font-size: 0.875rem;">
+                  <!-- Options populated dynamically -->
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">District *</label>
+                <select id="addr-district" required onchange="handleDistrictChange(this.value)" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs); background-color: var(--color-surface); font-size: 0.875rem;">
+                  <!-- Options populated dynamically -->
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Municipality / Rural Municipality *</label>
+                <input type="text" id="addr-municipality" required placeholder="Kathmandu Metropolitan City / Pokhara" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Ward Number *</label>
+                <input type="text" id="addr-ward" required placeholder="Ward 3" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+              </div>
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.35rem;">Tole / Street / Nearby Landmark *</label>
+              <input type="text" id="addr-tole" required placeholder="Durbar Marg, Opposite Annapurna Hotel" style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+            </div>
+          </div>
+
+          <!-- 2. Delivery Zone Selection -->
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.75rem; border-radius: var(--radius-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; margin-bottom: 1.25rem; color: var(--color-primary);">
+              2. Delivery Location & Rates
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 0.875rem;">
+              <label id="label-shipping-valley" class="nepal-payment-card selected" onclick="selectShipping('valley')">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="shipping_zone" value="valley" checked>
+                    <div>
+                      <div style="font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">Kathmandu Valley Delivery</div>
+                      <div style="font-size: 0.8125rem; color: var(--color-text-secondary);">Kathmandu, Lalitpur & Bhaktapur (1-2 Days)</div>
+                    </div>
+                  </div>
+                  <span id="shipping-rate-valley" style="font-weight: 700; color: var(--color-primary);">NPR 100</span>
+                </div>
+              </label>
+
+              <label id="label-shipping-outside" class="nepal-payment-card" onclick="selectShipping('outside')">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="shipping_zone" value="outside">
+                    <div>
+                      <div style="font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">Outside Valley Express Courier</div>
+                      <div style="font-size: 0.8125rem; color: var(--color-text-secondary);">All Provinces across Nepal (3-5 Days)</div>
+                    </div>
+                  </div>
+                  <span id="shipping-rate-outside" style="font-weight: 700; color: var(--color-primary);">NPR 150</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- 3. Nepal Payment Options UI -->
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.75rem; border-radius: var(--radius-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; margin-bottom: 1.25rem; color: var(--color-primary);">
+              3. Payment Option
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 0.875rem;">
+              
+              <!-- Cash on Delivery -->
+              <label id="pay-card-cod" class="nepal-payment-card selected" onclick="selectPayment('cod')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="payment_method" value="cod" checked>
+                    <span style="font-size: 1.25rem;">💵</span>
+                    <span style="font-weight: 700; color: var(--color-primary);">Cash on Delivery (COD)</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; background: var(--color-surface-secondary); padding: 0.2rem 0.5rem; border-radius: 4px;">Doorstep Cash</span>
+                </div>
+              </label>
+
+              <!-- eSewa Digital Wallet -->
+              <label id="pay-card-esewa" class="nepal-payment-card" onclick="selectPayment('esewa')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="payment_method" value="esewa">
+                    <span style="background:#60BB46; color:#FFF; font-weight:800; padding:2px 8px; border-radius:4px; font-size:0.75rem;">eSewa</span>
+                    <span style="font-weight: 700; color: var(--color-primary);">eSewa Digital Wallet</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: #60BB46; background: #E8F5E9; padding: 0.2rem 0.5rem; border-radius: 4px;">Instant Wallet</span>
+                </div>
+              </label>
+
+              <!-- Khalti Digital Wallet -->
+              <label id="pay-card-khalti" class="nepal-payment-card" onclick="selectPayment('khalti')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="payment_method" value="khalti">
+                    <span style="background:#5C2D91; color:#FFF; font-weight:800; padding:2px 8px; border-radius:4px; font-size:0.75rem;">Khalti</span>
+                    <span style="font-weight: 700; color: var(--color-primary);">Khalti Digital Wallet</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: #5C2D91; background: #F3E5F5; padding: 0.2rem 0.5rem; border-radius: 4px;">Scan & Pay</span>
+                </div>
+              </label>
+
+              <!-- Bank Transfer -->
+              <label id="pay-card-bank" class="nepal-payment-card" onclick="selectPayment('bank_transfer')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <input type="radio" name="payment_method" value="bank_transfer">
+                    <span style="font-size: 1.25rem;">🏛️</span>
+                    <span style="font-weight: 700; color: var(--color-primary);">Direct Nepal Bank Transfer</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; background: var(--color-surface-secondary); padding: 0.2rem 0.5rem; border-radius: 4px;">Nabil / NIC Asia</span>
+                </div>
+              </label>
+
+            </div>
+
+            <!-- Dynamic Payment Instructions Panel -->
+            <div id="payment-instruction-box" class="payment-detail-box" style="margin-top: 1.25rem;">
+              <!-- Inserted dynamically via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Order Summary -->
+        <div>
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.75rem; border-radius: var(--radius-sm); position: sticky; top: 100px;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; margin-bottom: 1rem; color: var(--color-primary);">
+              ORDER SUMMARY
+            </h3>
+
+            <div id="checkout-order-items" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 280px; overflow-y: auto; margin-bottom: 1.25rem;">
+              <!-- Items -->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--color-border); padding-top: 1rem; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--color-text-secondary);">Subtotal</span>
+                <span id="summary-subtotal-val" style="font-weight: 600;">NPR 0</span>
+              </div>
+              
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--color-text-secondary);">Estimated Shipping</span>
+                <span id="summary-shipping-val" style="font-weight: 600;">NPR 100</span>
+              </div>
+
+              <div id="summary-free-shipping-note" style="font-size: 0.75rem; color: var(--color-sale); text-align: right; font-weight: 600; display: none;">
+                🎉 Free Shipping Applied!
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 700; border-top: 1px solid var(--color-border); padding-top: 1rem; color: var(--color-primary); margin-top: 0.5rem;">
+                <span>Total Payable</span>
+                <span id="summary-total-val">NPR 0</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; padding: 1rem; font-size: 0.95rem;">
+              CONFIRM & PLACE ORDER
+            </button>
+
+            <div style="margin-top: 1.25rem; font-size: 0.75rem; color: var(--color-text-muted); text-align: center; line-height: 1.5;">
+              By placing your order, you agree to AURA Fashion Studios terms and easy 30-day return policy.
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+
+  <script>
+    let selectedZone = 'valley';
+    let selectedPaymentMethod = 'cod';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      UIManager.init();
+      populateProvinces();
+      renderOrderSummary();
+      updatePaymentInstructions();
+    });
+
+    function populateProvinces() {
+      const provSelect = document.getElementById('addr-province');
+      if (!provSelect || typeof NEPAL_CONFIG === 'undefined') return;
+
+      const provinces = Object.keys(NEPAL_CONFIG.provinces);
+      provSelect.innerHTML = provinces.map(p => `<option value="${p}">${p}</option>`).join('');
+
+      // Default Bagmati
+      handleProvinceChange(provinces[0]);
+    }
+
+    function handleProvinceChange(provinceName) {
+      const distSelect = document.getElementById('addr-district');
+      if (!distSelect || !NEPAL_CONFIG.provinces[provinceName]) return;
+
+      const districts = NEPAL_CONFIG.provinces[provinceName];
+      distSelect.innerHTML = districts.map(d => `<option value="${d}">${d}</option>`).join('');
+
+      // Auto toggle shipping zone based on Kathmandu/Lalitpur/Bhaktapur
+      handleDistrictChange(districts[0]);
+    }
+
+    function handleDistrictChange(districtName) {
+      if (['Kathmandu', 'Lalitpur', 'Bhaktapur'].includes(districtName)) {
+        selectShipping('valley');
+      } else {
+        selectShipping('outside');
+      }
+    }
+
+    function selectShipping(zone) {
+      selectedZone = zone;
+      document.getElementById('label-shipping-valley').classList.toggle('selected', zone === 'valley');
+      document.getElementById('label-shipping-outside').classList.toggle('selected', zone === 'outside');
+      
+      const valleyRadio = document.querySelector('input[name="shipping_zone"][value="valley"]');
+      const outsideRadio = document.querySelector('input[name="shipping_zone"][value="outside"]');
+      if (valleyRadio) valleyRadio.checked = (zone === 'valley');
+      if (outsideRadio) outsideRadio.checked = (zone === 'outside');
+
+      renderOrderSummary();
+    }
+
+    function selectPayment(method) {
+      selectedPaymentMethod = method;
+      ['cod', 'esewa', 'khalti', 'bank_transfer'].forEach(m => {
+        const card = document.getElementById(`pay-card-${m === 'bank_transfer' ? 'bank' : m}`);
+        if (card) card.classList.toggle('selected', m === method);
+      });
+
+      const radio = document.querySelector(`input[name="payment_method"][value="${method}"]`);
+      if (radio) radio.checked = true;
+
+      updatePaymentInstructions();
+    }
+
+    function updatePaymentInstructions() {
+      const box = document.getElementById('payment-instruction-box');
+      if (!box) return;
+
+      if (selectedPaymentMethod === 'cod') {
+        box.innerHTML = `
+          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">💵 Cash on Delivery (COD) Selected</div>
+          <div>Please prepare exact cash in NPR upon delivery. Our logistics agent will call your provided mobile number (+977) before arrival.</div>
+        `;
+      } else if (selectedPaymentMethod === 'esewa') {
+        box.innerHTML = `
+          <div style="font-weight: 700; color: #60BB46; margin-bottom: 0.25rem;">🟢 eSewa Digital Transfer (Demo)</div>
+          <div>Transfer total amount to eSewa ID: <strong>9801234567</strong> (AURA Fashion Studios Pvt. Ltd.)</div>
+          <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.35rem;">* Order will be verified instantly upon submitting this form.</div>
+        `;
+      } else if (selectedPaymentMethod === 'khalti') {
+        box.innerHTML = `
+          <div style="font-weight: 700; color: #5C2D91; margin-bottom: 0.25rem;">🟣 Khalti Wallet Transfer (Demo)</div>
+          <div>Scan or Pay via Khalti ID: <strong>9801234567</strong> or Username <strong>@aurastudios</strong></div>
+          <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.35rem;">* Order dispatched immediately after verification.</div>
+        `;
+      } else if (selectedPaymentMethod === 'bank_transfer') {
+        box.innerHTML = `
+          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">🏛️ Direct Bank Transfer (Demo)</div>
+          <div><strong>Bank:</strong> Nabil Bank Ltd. / NIC Asia Bank<br>
+          <strong>Account Name:</strong> AURA Fashion Studios Pvt. Ltd.<br>
+          <strong>Account Number:</strong> 00101017500123</div>
+        `;
+      }
+    }
+
+    function renderOrderSummary() {
+      const cart = CartStore.getCart();
+      const subtotal = CartStore.getCartSubtotal();
+
+      const itemsEl = document.getElementById('checkout-order-items');
+      const subtotalEl = document.getElementById('summary-subtotal-val');
+      const shippingEl = document.getElementById('summary-shipping-val');
+      const freeNote = document.getElementById('summary-free-shipping-note');
+      const totalEl = document.getElementById('summary-total-val');
+
+      if (itemsEl) {
+        if (cart.length === 0) {
+          itemsEl.innerHTML = `<div style="text-align: center; color: var(--color-text-muted); padding: 1rem;">Your shopping bag is empty.</div>`;
+        } else {
+          itemsEl.innerHTML = cart.map(i => `
+            <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
+              <span>${i.name} <strong style="color: var(--color-text-muted);">(x${i.quantity})</strong></span>
+              <span style="font-weight: 600;">${ProductsAPI.formatPrice(i.price * i.quantity)}</span>
+            </div>
+          `).join('');
+        }
+      }
+
+      let shippingRate = selectedZone === 'valley' ? NEPAL_CONFIG.shipping.insideValley.rate : NEPAL_CONFIG.shipping.outsideValley.rate;
+
+      if (subtotal >= NEPAL_CONFIG.shipping.freeShippingThreshold && cart.length > 0) {
+        shippingRate = 0;
+        if (freeNote) freeNote.style.display = 'block';
+      } else {
+        if (freeNote) freeNote.style.display = 'none';
+      }
+
+      const total = subtotal + shippingRate;
+
+      if (subtotalEl) subtotalEl.textContent = ProductsAPI.formatPrice(subtotal);
+      if (shippingEl) shippingEl.textContent = shippingRate === 0 ? 'FREE' : ProductsAPI.formatPrice(shippingRate);
+      if (totalEl) totalEl.textContent = ProductsAPI.formatPrice(total);
+    }
+
+    const form = document.getElementById('checkout-form');
+    if (form) {
+      form.onsubmit = (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('cust-fullname').value;
+        const phone = document.getElementById('cust-phone').value;
+        const district = document.getElementById('addr-district').value;
+        const municipality = document.getElementById('addr-municipality').value;
+
+        if (CartStore.getCart().length === 0) {
+          UIManager.showToast("Your bag is empty! Add products before checking out.", "Empty Cart");
+          return;
+        }
+
+        CartStore.clearCart();
+
+        alert(`🎉 DHANYABAD ${name.toUpperCase()}!\n\nYour order has been successfully placed.\n\nDelivery Address: ${municipality}, ${district}, Nepal\nContact Phone: ${phone}\nPayment Method: ${selectedPaymentMethod.toUpperCase()}\n\nOur team will contact you shortly to confirm delivery!`);
+
+        window.location.href = "index.html";
+      };
+    }
+  </script>
+</body>
+</html>

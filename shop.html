@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Catalog | AURA Fashion Studios</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    FREE SHIPPING ON ORDERS OVER NPR 3,000 &bull; EASY 30-DAY RETURNS
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <button class="hamburger-btn mobile-nav-trigger" aria-label="Open Navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+
+      <nav class="nav-desktop">
+        <a href="shop.html" class="nav-link active">Shop Catalog</a>
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=kids" class="nav-link">Kids</a>
+        <a href="offers.html" class="nav-link" style="color: var(--color-sale);">Offers & Sale</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="action-icon-btn search-trigger-btn" aria-label="Search Catalog">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="action-icon-btn account-trigger-btn" aria-label="Account Login">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <a href="wishlist.html" class="action-icon-btn" aria-label="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </a>
+        <button class="action-icon-btn cart-trigger-btn" aria-label="Shopping Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop Main Content -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Shop</span>
+      </nav>
+
+      <!-- Shop Hero -->
+      <div class="shop-hero">
+        <span class="section-subtitle">THE COMPLETE CATALOGUE</span>
+        <h1 class="shop-hero-title">SHOP THE COLLECTION</h1>
+        <p class="shop-hero-desc">Curated architectural tailoring, double-faced cashmere outerwear, and tactile organic essentials engineered for lasting confidence and effortless elegance.</p>
+        
+        <!-- Category Navigation Quick Pills -->
+        <div class="category-pills">
+          <button class="cat-pill-btn active" data-category="all">All Items</button>
+          <button class="cat-pill-btn" data-category="women">Women</button>
+          <button class="cat-pill-btn" data-category="men">Men</button>
+          <button class="cat-pill-btn" data-category="kids">Kids</button>
+          <button class="cat-pill-btn" data-category="accessories">Accessories</button>
+        </div>
+      </div>
+
+      <!-- Product Discovery Toolbar -->
+      <div class="shop-toolbar">
+        <div class="toolbar-results-count" id="shop-results-count">
+          Showing items...
+        </div>
+
+        <button id="open-mobile-filter" class="mobile-filter-trigger">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+          Filter Products
+        </button>
+
+        <div class="toolbar-actions">
+          <!-- Sort Dropdown -->
+          <div class="sort-select-wrapper">
+            <label for="shop-sort-select">Sort By:</label>
+            <select id="shop-sort-select" class="sort-select">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest Arrivals</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="best-selling">Best Selling</option>
+            </select>
+          </div>
+
+          <!-- Grid View Controls -->
+          <div class="grid-view-controls">
+            <button class="grid-view-btn" data-cols="2" title="2 Column Grid">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="18" rx="1"></rect><rect x="13" y="3" width="8" height="18" rx="1"></rect></svg>
+            </button>
+            <button class="grid-view-btn" data-cols="3" title="3 Column Grid">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="18" rx="1"></rect><rect x="9.5" y="3" width="5" height="18" rx="1"></rect><rect x="16" y="3" width="5" height="18" rx="1"></rect></svg>
+            </button>
+            <button class="grid-view-btn active" data-cols="4" title="4 Column Grid">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="3" width="4" height="18" rx="1"></rect><rect x="7.3" y="3" width="4" height="18" rx="1"></rect><rect x="12.6" y="3" width="4" height="18" rx="1"></rect><rect x="18" y="3" width="4" height="18" rx="1"></rect></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Filter Tags Chips Bar -->
+      <div id="active-filters-chips" class="active-filters-bar"></div>
+
+      <!-- Main Shop Layout (Sidebar + Product Grid) -->
+      <div class="shop-layout">
+        
+        <!-- Desktop Filter Sidebar -->
+        <aside class="shop-sidebar desktop-sidebar">
+          
+          <!-- Subcategory Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Subcategories</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <label class="filter-checkbox-label">
+                <span>Outerwear</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Outerwear">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Tailoring</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Tailoring">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Dresses</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Dresses">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Tops & Shirts</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Tops & Shirts">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Bottoms</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Bottoms">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Knitwear</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Knitwear">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Accessories</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Accessories">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Footwear</span>
+                <input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Footwear">
+              </label>
+            </div>
+          </div>
+
+          <!-- Size Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Sizes</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <div class="size-box-filter">
+                <button class="size-filter-btn" data-size="XS">XS</button>
+                <button class="size-filter-btn" data-size="S">S</button>
+                <button class="size-filter-btn" data-size="M">M</button>
+                <button class="size-filter-btn" data-size="L">L</button>
+                <button class="size-filter-btn" data-size="XL">XL</button>
+                <button class="size-filter-btn" data-size="XXL">XXL</button>
+                <button class="size-filter-btn" data-size="4Y">4Y</button>
+                <button class="size-filter-btn" data-size="8Y">8Y</button>
+                <button class="size-filter-btn" data-size="12Y">12Y</button>
+                <button class="size-filter-btn" data-size="One Size">One Size</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Swatch Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Colors</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <div class="color-swatch-filter">
+                <button class="color-filter-btn" data-color="Camel" style="background-color: #C2A682;" title="Camel"></button>
+                <button class="color-filter-btn" data-color="Black" style="background-color: #1A1A1A;" title="Black"></button>
+                <button class="color-filter-btn" data-color="Cream" style="background-color: #F3EFE0;" title="Cream"></button>
+                <button class="color-filter-btn" data-color="Charcoal" style="background-color: #333333;" title="Charcoal"></button>
+                <button class="color-filter-btn" data-color="Navy" style="background-color: #192841;" title="Navy"></button>
+                <button class="color-filter-btn" data-color="Espresso" style="background-color: #3D2314;" title="Espresso"></button>
+                <button class="color-filter-btn" data-color="Sage" style="background-color: #8A9A86;" title="Sage"></button>
+                <button class="color-filter-btn" data-color="Stone" style="background-color: #B0A89E;" title="Stone"></button>
+                <button class="color-filter-btn" data-color="Cognac" style="background-color: #9E5B32;" title="Cognac"></button>
+                <button class="color-filter-btn" data-color="Gold" style="background-color: #D4AF37;" title="Gold"></button>
+                <button class="color-filter-btn" data-color="Indigo" style="background-color: #1C2D42;" title="Indigo"></button>
+                <button class="color-filter-btn" data-color="Oatmeal" style="background-color: #E3DAC9;" title="Oatmeal"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Price Range</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <input type="range" id="price-max-slider" min="3000" max="30000" step="1000" value="30000" style="width: 100%; accent-color: var(--color-primary); cursor: pointer;">
+              <div id="price-range-output" style="font-size: 0.8125rem; font-weight: 600; color: var(--color-primary); margin-top: 0.35rem;">
+                Up to NPR 30,000
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand / Line Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Collection Line</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <label class="filter-checkbox-label">
+                <span>AURA Atelier</span>
+                <input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Atelier">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>AURA Tailored</span>
+                <input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Tailored">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>AURA Essentials</span>
+                <input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Essentials">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>AURA Denim</span>
+                <input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Denim">
+              </label>
+            </div>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Availability</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <label class="filter-checkbox-label">
+                <span>All Products</span>
+                <input type="radio" name="availability" class="filter-radio" data-type="availability" value="all" checked>
+              </label>
+              <label class="filter-checkbox-label">
+                <span>In Stock Only</span>
+                <input type="radio" name="availability" class="filter-radio" data-type="availability" value="inStock">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>Special Sale Only</span>
+                <input type="radio" name="availability" class="filter-radio" data-type="availability" value="onSale">
+              </label>
+            </div>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Customer Rating</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="filter-content">
+              <label class="filter-checkbox-label">
+                <span>All Ratings</span>
+                <input type="radio" name="rating" class="filter-radio" data-type="rating" value="0" checked>
+              </label>
+              <label class="filter-checkbox-label">
+                <span>4.8★ & above</span>
+                <input type="radio" name="rating" class="filter-radio" data-type="rating" value="4.8">
+              </label>
+              <label class="filter-checkbox-label">
+                <span>4.5★ & above</span>
+                <input type="radio" name="rating" class="filter-radio" data-type="rating" value="4.5">
+              </label>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <button class="btn btn-secondary" onclick="ShopController.clearAllFilters()" style="width: 100%; font-size: 0.8125rem;">
+            RESET ALL FILTERS
+          </button>
+        </aside>
+
+        <!-- Product Grid Area -->
+        <div>
+          <div id="shop-products-grid" class="shop-product-grid grid-cols-4">
+            <!-- Dynamically Rendered via ShopController -->
+          </div>
+
+          <!-- Pagination -->
+          <div id="shop-pagination" class="pagination-wrapper"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Mobile Filter Bottom Sheet Drawer -->
+  <div id="mobile-filter-drawer" class="mobile-filter-drawer">
+    <div class="mobile-filter-header">
+      <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">Filter Catalogue</h3>
+      <button id="close-mobile-filter" class="close-btn">&times;</button>
+    </div>
+    
+    <div class="mobile-filter-body">
+      <!-- Duplicate controls for mobile accessibility -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem;">Subcategories</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <label class="filter-checkbox-label"><span>Outerwear</span><input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Outerwear"></label>
+            <label class="filter-checkbox-label"><span>Tailoring</span><input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Tailoring"></label>
+            <label class="filter-checkbox-label"><span>Dresses</span><input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Dresses"></label>
+            <label class="filter-checkbox-label"><span>Tops & Shirts</span><input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Tops & Shirts"></label>
+            <label class="filter-checkbox-label"><span>Bottoms</span><input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Bottoms"></label>
+            <label class="filter-checkbox-label"><span>Knitwear</span><input type="checkbox" class="filter-checkbox" data-type="subcategory" value="Knitwear"></label>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem;">Sizes</h4>
+          <div class="size-box-filter">
+            <button class="size-filter-btn" data-size="XS">XS</button>
+            <button class="size-filter-btn" data-size="S">S</button>
+            <button class="size-filter-btn" data-size="M">M</button>
+            <button class="size-filter-btn" data-size="L">L</button>
+            <button class="size-filter-btn" data-size="XL">XL</button>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem;">Line Collection</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="filter-checkbox-label"><span>AURA Atelier</span><input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Atelier"></label>
+            <label class="filter-checkbox-label"><span>AURA Tailored</span><input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Tailored"></label>
+            <label class="filter-checkbox-label"><span>AURA Essentials</span><input type="checkbox" class="filter-checkbox" data-type="brand" value="AURA Essentials"></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mobile-filter-footer">
+      <button class="btn btn-secondary" onclick="ShopController.clearAllFilters()" style="flex: 1;">RESET</button>
+      <button id="apply-mobile-filter" class="btn btn-primary" style="flex: 2;">APPLY FILTERS</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: block;">AURA<span>STUDIOS</span></a>
+          <p class="footer-desc">Understated luxury and architectural tailoring. Crafting investment wardrobe staples designed to transcend seasonal trends.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women's Collection</a></li>
+            <li><a href="shop.html?category=men">Men's Tailoring</a></li>
+            <li><a href="shop.html?category=kids">Junior Atelier</a></li>
+            <li><a href="offers.html">Private Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Concierge Advisory</a></li>
+            <li><a href="about.html">Brand Heritage</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="wishlist.html">Saved Favourites</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 AURA Fashion Studios. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Shopping Cart Drawer -->
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Shopping Bag</h3>
+      <button id="close-cart-drawer" class="close-btn">&times;</button>
+    </div>
+    <div class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-price">NPR 0</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width: 100%;">PROCEED TO CHECKOUT</a>
+    </div>
+  </aside>
+
+  <!-- Search Drawer -->
+  <div id="search-drawer" class="search-drawer">
+    <div class="container" style="position: relative;">
+      <button id="close-search-drawer" class="close-btn" style="position: absolute; right: 0; top: -10px;">&times;</button>
+      <div class="search-input-box">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="live-search-input" placeholder="Search coat, blazer, silk dress, cashmere..." autofocus>
+      </div>
+      <div id="search-results-output" style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+      <button id="close-mobile-nav" class="close-btn">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="shop.html" class="mobile-nav-link">Shop All Catalog</a></li>
+      <li><a href="shop.html?category=women" class="mobile-nav-link">Women's Collection</a></li>
+      <li><a href="shop.html?category=men" class="mobile-nav-link">Men's Tailoring</a></li>
+      <li><a href="shop.html?category=kids" class="mobile-nav-link">Kids Atelier</a></li>
+      <li><a href="offers.html" class="mobile-nav-link" style="color: var(--color-sale);">Offers & Sale</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+    </ul>
+  </aside>
+
+  <!-- Quick View Modal Container -->
+  <div id="quick-view-modal" class="modal-wrapper">
+    <!-- Populated by JavaScript -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>

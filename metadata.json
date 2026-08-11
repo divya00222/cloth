@@ -1,0 +1,6 @@
+{
+  "name": "AURA - Modern Fashion Store",
+  "description": "A high-end, premium fashion and clothing e-commerce demo template built with HTML5, CSS3, and Vanilla JavaScript.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

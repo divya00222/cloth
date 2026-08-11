@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Saved Wishlist | AURA Fashion Studios</title>
+  <meta name="description" content="View and manage your saved luxury apparel, dresses, blazers, and accessories at AURA Fashion Studios.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement-bar">
+    FREE SHIPPING ON ORDERS OVER NPR 3,000 &bull; EASY 30-DAY RETURNS
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <button class="hamburger-btn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+
+      <nav class="nav-desktop">
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=kids" class="nav-link">Kids</a>
+        <a href="offers.html" class="nav-link" style="color: var(--color-sale);">Sale</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="action-icon-btn search-trigger-btn" aria-label="Search Catalog">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <button class="action-icon-btn account-trigger-btn" aria-label="Account Login">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+
+        <a href="wishlist.html" class="action-icon-btn active" aria-label="View Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </a>
+
+        <button class="action-icon-btn cart-trigger-btn" aria-label="Shopping Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Wishlist Hero Header -->
+  <section class="wishlist-page-header">
+    <div class="container">
+      <span class="section-subtitle">SAVED FAVOURITES</span>
+      <h1 class="section-title" style="margin-bottom: 0.5rem;">YOUR WISHLIST</h1>
+      <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Review your favorite silhouettes and move them directly to your shopping bag.</p>
+    </div>
+  </section>
+
+  <!-- Wishlist Content Area -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div id="wishlist-controls-bar" class="wishlist-controls-bar" style="display: none;">
+        <div id="wishlist-count-text" style="font-size: 0.9rem; font-weight: 600; color: var(--color-primary);">
+          0 Items Saved
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <button onclick="moveAllWishlistToBag()" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.8125rem;">
+            MOVE ALL TO BAG
+          </button>
+          <button onclick="clearWishlistConfirmation()" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8125rem; color: var(--color-sale); border-color: var(--color-border);">
+            CLEAR WISHLIST
+          </button>
+        </div>
+      </div>
+
+      <div id="wishlist-grid-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: #FFF;">AURA<span>STUDIOS</span></a>
+          <p class="footer-desc">Crafting modern silhouettes and high-end fashion statement pieces.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop Catalog</a></li>
+            <li><a href="shop.html?category=women">Women's Collection</a></li>
+            <li><a href="shop.html?category=men">Men's Collection</a></li>
+            <li><a href="offers.html">Exclusive Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="checkout.html">Checkout Bag</a></li>
+            <li><a href="wishlist.html">Saved Wishlist</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 AURA Fashion Studios. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <aside class="cart-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Shopping Bag</h3>
+      <button id="close-cart-drawer" class="close-btn">&times;</button>
+    </div>
+
+    <div class="shipping-progress-bar">
+      <div id="shipping-progress-text">Calculate shipping progress...</div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-body">
+      <!-- Cart items injected via JS -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-drawer-subtotal">NPR 0</span>
+      </div>
+      <a href="cart.html" class="btn btn-outline" style="width: 100%; text-align: center;">VIEW BAG</a>
+      <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center;">PROCEED TO CHECKOUT</a>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+
+  <script>
+    function renderWishlistPage() {
+      const container = document.getElementById('wishlist-grid-container');
+      const controlsBar = document.getElementById('wishlist-controls-bar');
+      const countText = document.getElementById('wishlist-count-text');
+
+      if (!container) return;
+
+      const wishlistIds = CartStore.getWishlist();
+
+      if (wishlistIds.length === 0) {
+        if (controlsBar) controlsBar.style.display = 'none';
+        container.innerHTML = `
+          <div class="wishlist-empty-container reveal active">
+            <div class="wishlist-empty-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h2 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 0.5rem;">WISHLIST IS EMPTY</h2>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.6;">Save your favorite styles and find them here.</p>
+            <a href="shop.html" class="btn btn-primary" style="padding: 0.875rem 2rem;">EXPLORE COLLECTION</a>
+          </div>
+        `;
+        return;
+      }
+
+      if (controlsBar) controlsBar.style.display = 'flex';
+      if (countText) countText.textContent = `${wishlistIds.length} Item${wishlistIds.length > 1 ? 's' : ''} Saved`;
+
+      const products = wishlistIds.map(id => ProductsAPI.getById(id)).filter(Boolean);
+
+      container.innerHTML = `
+        <div class="shop-product-grid grid-cols-4">
+          ${products.map(p => `
+            <article class="wishlist-card" data-product-id="${p.id}">
+              <div class="wishlist-card-img-wrapper">
+                <a href="product.html?id=${p.id}" style="display: block; width: 100%; height: 100%;">
+                  <img src="${p.images.main}" alt="${p.name}" loading="lazy">
+                </a>
+                
+                <button class="wishlist-remove-btn" onclick="removeFromWishlistPage('${p.id}')" aria-label="Remove from wishlist" title="Remove item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="wishlist-card-content">
+                <div>
+                  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); font-weight: 600;">${p.categoryLabel}</span>
+                  <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--color-primary); margin: 0.25rem 0;">
+                    <a href="product.html?id=${p.id}" style="color: inherit; text-decoration: none;">${p.name}</a>
+                  </h3>
+                  
+                  <div style="font-size: 0.8125rem; color: #D97706; margin-bottom: 0.5rem;">
+                    ★ ${p.rating} <span style="color: var(--color-text-muted);">(${p.reviewsCount} reviews)</span>
+                  </div>
+
+                  <div style="font-weight: 700; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">
+                    ${ProductsAPI.formatPrice(p.price)}
+                    ${p.oldPrice ? `<span style="font-size: 0.875rem; text-decoration: line-through; color: var(--color-text-muted); margin-left: 0.5rem;">${ProductsAPI.formatPrice(p.oldPrice)}</span>` : ''}
+                  </div>
+                </div>
+
+                <button onclick="addWishlistItemToCart('${p.id}')" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
+                  ADD TO BAG
+                </button>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function removeFromWishlistPage(productId) {
+      CartStore.toggleWishlist(productId);
+      renderWishlistPage();
+      const product = ProductsAPI.getById(productId);
+      if (product) {
+        UIManager.showToast(`${product.name} removed from your wishlist.`, "Wishlist Updated");
+      }
+    }
+
+    function addWishlistItemToCart(productId) {
+      CartStore.addToCart(productId, 1);
+      const product = ProductsAPI.getById(productId);
+      if (product) {
+        UIManager.showToast(`${product.name} added to your bag.`, "Added to Cart");
+      }
+      UIManager.openCartDrawer();
+    }
+
+    function moveAllWishlistToBag() {
+      const ids = CartStore.getWishlist();
+      ids.forEach(id => {
+        CartStore.addToCart(id, 1);
+      });
+      CartStore.saveWishlist([]);
+      renderWishlistPage();
+      UIManager.showToast("All items moved to your shopping bag!", "Bag Updated");
+      UIManager.openCartDrawer();
+    }
+
+    function clearWishlistConfirmation() {
+      if (confirm("Are you sure you want to clear all items from your wishlist?")) {
+        CartStore.saveWishlist([]);
+        renderWishlistPage();
+        UIManager.showToast("Your wishlist has been cleared.", "Wishlist Cleared");
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      UIManager.init();
+      renderWishlistPage();
+      window.addEventListener('wishlistUpdated', renderWishlistPage);
+    });
+  </script>
+</body>
+</html>

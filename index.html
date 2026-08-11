@@ -1,913 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Er. Sundar Thapa — Civil Sub-Engineer | Planning, Survey &amp; Construction Consultancy</title>
-<meta name="description" content="Er. Sundar Thapa, Civil Sub-Engineer with 15+ years of experience in site survey, building supervision, BOQ preparation and construction consultancy.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA | Modern Luxury Fashion & Clothing</title>
+  <meta name="description" content="Discover modern silhouettes and timeless confidence at AURA Fashion Studios. High-end apparel, outerwear, and accessories.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
 
-<!-- ============ LOADING SCREEN ============ -->
-<div class="loader" id="loader">
-  <div class="loader-inner">
-    <svg class="loader-compass" width="64" height="64" viewBox="0 0 64 64" fill="none">
-      <circle cx="32" cy="32" r="28" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="4 4"/>
-      <line x1="32" y1="8" x2="32" y2="56" stroke="#0EA5E9" stroke-width="1" opacity="0.4"/>
-      <line x1="8" y1="32" x2="56" y2="32" stroke="#0EA5E9" stroke-width="1" opacity="0.4"/>
-      <path class="loader-needle" d="M32 14 L38 32 L32 50 L26 32 Z" fill="#0EA5E9"/>
-    </svg>
-    <div class="loader-label">DRAWING&nbsp;SHEET&nbsp;LOADING</div>
-    <div class="loader-bar"><span></span></div>
+  <!-- Announcement Bar -->
+  <div class="top-announcement-bar">
+    FREE SHIPPING ON ORDERS OVER NPR 3,000 &bull; EASY 30-DAY RETURNS
   </div>
-</div>
 
-<!-- ============ SCROLL PROGRESS ============ -->
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<!-- ============ CUSTOM CURSOR ============ -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="#home" class="logo">
-      <span class="logo-mark">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect x="1" y="1" width="38" height="38" rx="8" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M10 28V14L20 8L30 14V28" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M14 28V19H26V28" stroke="currentColor" stroke-width="1.6"/>
-          <line x1="10" y1="28" x2="30" y2="28" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </span>
-      <span class="logo-text">
-        <strong>SUNDAR&nbsp;THAPA</strong>
-        <em>Civil Sub&#8209;Engineer</em>
-      </span>
-    </a>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="#home" class="nav-link active">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
-      <a href="#testimonials" class="nav-link">Testimonials</a>
-      <a href="#blog" class="nav-link">Blog</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-
-    <div class="header-actions">
-      <a href="tel:+9779800000000" class="header-phone">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+977&nbsp;98&#8209;0000&#8209;0000</span>
-      </a>
-      <a href="#contact" class="btn btn-accent btn-sm">Get Quote</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
+  <!-- Main Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-btn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-    </div>
-  </div>
-</header>
 
-<main>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="home">
-  <div class="hero-blueprint-grid"></div>
-  <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&auto=format&fit=crop" alt="" class="hero-img">
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="hero-scale" aria-hidden="true">
-    <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
-  </div>
-
-  <div class="hero-content">
-    <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;01 — INTRODUCTION</p>
-    <h1 class="hero-title">
-      <span class="line" data-typing>Professional Civil</span>
-      <span class="line">Sub&#8209;Engineer<span class="hero-cursor">|</span></span>
-    </h1>
-    <p class="hero-subtitle">
-      <span>Planning</span><i>•</i><span>Estimation</span><i>•</i><span>Survey</span><i>•</i><span>Supervision</span><i>•</i><span>Construction&nbsp;Consultancy</span>
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-accent btn-lg btn-ripple">
-        Hire Me
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo">
+        AURA
+        <span>STUDIOS</span>
       </a>
-      <a href="#projects" class="btn btn-outline btn-lg btn-ripple">Our Projects</a>
-    </div>
 
-    <div class="hero-stats">
-      <div class="hstat" data-count="15" data-suffix="+">
-        <span class="hstat-num"><span class="num">0</span><span class="suffix">+</span></span>
-        <span class="hstat-label">Years<br>Experience</span>
-      </div>
-      <div class="hstat" data-count="500" data-suffix="+">
-        <span class="hstat-num"><span class="num">0</span><span class="suffix">+</span></span>
-        <span class="hstat-label">Projects<br>Completed</span>
-      </div>
-      <div class="hstat" data-count="200" data-suffix="+">
-        <span class="hstat-num"><span class="num">0</span><span class="suffix">+</span></span>
-        <span class="hstat-label">Happy<br>Clients</span>
-      </div>
-      <div class="hstat" data-count="100" data-suffix="%">
-        <span class="hstat-num"><span class="num">0</span><span class="suffix">%</span></span>
-        <span class="hstat-label">Client<br>Satisfaction</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-float hero-float-1"></div>
-  <div class="hero-float hero-float-2"></div>
-
-  <button class="scroll-indicator" id="scrollIndicator" aria-label="Scroll down">
-    <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
-    <span class="scroll-text">SCROLL</span>
-  </button>
-</section>
-
-<!-- ============ CLIENTS / TRUSTED BY ============ -->
-<section class="clients">
-  <div class="container">
-    <p class="clients-label">Trusted by government bodies, contractors &amp; private clients</p>
-  </div>
-  <div class="clients-track">
-    <div class="clients-row" id="clientsRow">
-      <span class="client-chip">Municipality&nbsp;Office</span>
-      <span class="client-chip">Dept.&nbsp;of&nbsp;Roads</span>
-      <span class="client-chip">Himal&nbsp;Builders</span>
-      <span class="client-chip">Rural&nbsp;Municipality</span>
-      <span class="client-chip">Everest&nbsp;Infra&nbsp;Pvt.&nbsp;Ltd</span>
-      <span class="client-chip">DUDBC</span>
-      <span class="client-chip">Sagarmatha&nbsp;Constructions</span>
-      <span class="client-chip">Ward&nbsp;Office&nbsp;–&nbsp;12</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="container about-grid">
-    <div class="about-media reveal" data-reveal="left">
-      <div class="about-frame">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop" alt="Er. Sundar Thapa reviewing structural drawings on site">
-        <div class="about-badge">
-          <span class="about-badge-num">15+</span>
-          <span class="about-badge-text">Years of<br>Field Experience</span>
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <div class="nav-item-has-megamenu">
+          <a href="shop.html?category=women" class="nav-link">Women</a>
+          <div class="megamenu">
+            <div class="container megamenu-grid">
+              <div class="megamenu-col">
+                <h4>Clothing</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=women&type=coats">Coats & Jackets</a></li>
+                  <li><a href="shop.html?category=women&type=dresses">Dresses & Knitwear</a></li>
+                  <li><a href="shop.html?category=women&type=blouses">Blouses & Shirts</a></li>
+                  <li><a href="shop.html?category=women&type=trousers">Trousers & Skirts</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-col">
+                <h4>Footwear</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=shoes">Leather Boots</a></li>
+                  <li><a href="shop.html?category=shoes">Loafers & Flats</a></li>
+                  <li><a href="shop.html?category=shoes">Mules & Heels</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-col">
+                <h4>Accessories</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=accessories">Leather Bags</a></li>
+                  <li><a href="shop.html?category=accessories">Jewelry & Watches</a></li>
+                  <li><a href="shop.html?category=accessories">Sunglasses</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-col">
+                <h4>Collections</h4>
+                <ul class="megamenu-list">
+                  <li><a href="offers.html">Autumn Capsule '26</a></li>
+                  <li><a href="offers.html">Sustainable Silk</a></li>
+                  <li><a href="offers.html">Minimal Essentials</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-banner">
+                <img src="src/assets/images/category_women_1786432406848.jpg" alt="Women New Arrival">
+                <div class="megamenu-banner-content">
+                  <span class="megamenu-banner-title">Silk Collection</span>
+                  <a href="shop.html?category=women" style="font-size: 0.75rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase;">Explore Now &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="about-corner about-corner-tl"></div>
-        <div class="about-corner about-corner-br"></div>
-      </div>
-    </div>
 
-    <div class="about-content reveal" data-reveal="right">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;02 — ABOUT ME</p>
-      <h2 class="section-title">Building trust,<br>one drawing at a time.</h2>
-      <p class="about-text">
-        I'm Sundar Thapa, a licensed Civil Sub&#8209;Engineer with over fifteen years of hands&#8209;on experience across residential, commercial and government infrastructure projects. From the first topographic survey to the final handover, I stay close to the site — because good engineering is decided on the ground, not just on paper.
-      </p>
+        <div class="nav-item-has-megamenu">
+          <a href="shop.html?category=men" class="nav-link">Men</a>
+          <div class="megamenu">
+            <div class="container megamenu-grid">
+              <div class="megamenu-col">
+                <h4>Tailoring</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=men&type=blazers">Wool Blazers</a></li>
+                  <li><a href="shop.html?category=men&type=suits">Suit Trousers</a></li>
+                  <li><a href="shop.html?category=men&type=shirts">Dress Shirts</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-col">
+                <h4>Casualwear</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=men&type=hoodies">Heavyweight Hoodies</a></li>
+                  <li><a href="shop.html?category=men&type=tees">Organic Cotton Tees</a></li>
+                  <li><a href="shop.html?category=men&type=denim">Selvedge Denim</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-col">
+                <h4>Outerwear</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=men&type=coats">Trench Coats</a></li>
+                  <li><a href="shop.html?category=men&type=jackets">Leather Jackets</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-col">
+                <h4>Footwear</h4>
+                <ul class="megamenu-list">
+                  <li><a href="shop.html?category=shoes">Chelsea Boots</a></li>
+                  <li><a href="shop.html?category=shoes">Minimal Sneakers</a></li>
+                </ul>
+              </div>
+              <div class="megamenu-banner">
+                <img src="src/assets/images/category_men_1786432421440.jpg" alt="Men Tailoring">
+                <div class="megamenu-banner-content">
+                  <span class="megamenu-banner-title">Modern Tailoring</span>
+                  <a href="shop.html?category=men" style="font-size: 0.75rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase;">Shop Men &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="about-pillars">
-        <div class="pillar">
-          <span class="pillar-tag">MISSION</span>
-          <p>Deliver structurally sound, code&#8209;compliant work that clients can trust for decades, not just for handover day.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-tag">VISION</span>
-          <p>Raise the standard of local sub&#8209;engineering practice through transparent process and measurable quality.</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-tag">VALUES</span>
-          <p>Accuracy, accountability and honest estimation — even when it isn't the easiest answer for the client.</p>
-        </div>
-      </div>
+        <a href="shop.html?category=kids" class="nav-link">Kids</a>
+        <a href="shop.html?filter=new" class="nav-link">New Arrivals</a>
+        <a href="offers.html" class="nav-link" style="color: var(--color-sale);">Sale</a>
+      </nav>
 
-      <div class="about-timeline">
-        <div class="tl-item reveal">
-          <span class="tl-year">2009</span>
-          <span class="tl-text">Diploma in Civil Engineering, began fieldwork on municipal roads</span>
-        </div>
-        <div class="tl-item reveal">
-          <span class="tl-year">2014</span>
-          <span class="tl-text">Registered Sub&#8209;Engineer, first independent supervision contract</span>
-        </div>
-        <div class="tl-item reveal">
-          <span class="tl-year">2019</span>
-          <span class="tl-text">Led survey &amp; BOQ for a 40&#8209;bed government hospital block</span>
-        </div>
-        <div class="tl-item reveal">
-          <span class="tl-year">Today</span>
-          <span class="tl-text">Independent consultancy — 500+ projects across 6 districts</span>
-        </div>
-      </div>
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <button class="action-icon-btn search-trigger-btn" aria-label="Search Catalog">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
 
-      <div class="about-actions">
-        <a href="#services" class="btn btn-primary btn-ripple">Read More</a>
-        <a href="#" class="btn btn-ghost btn-ripple" id="downloadCvBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Download CV
+        <button class="action-icon-btn account-trigger-btn" aria-label="Account Login">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+
+        <a href="wishlist.html" class="action-icon-btn" aria-label="View Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
         </a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ WHY CHOOSE US ============ -->
-<section class="why" id="why">
-  <div class="container">
-    <div class="section-head center reveal">
-      <p class="eyebrow center"><span class="eyebrow-dot"></span>FIG.&nbsp;03 — WHY CHOOSE ME</p>
-      <h2 class="section-title">Six reasons clients<br>keep coming back</h2>
-    </div>
-
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <span class="why-corner tl"></span><span class="why-corner br"></span>
-        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 7 7 1-5 5 1.5 7L12 18l-6.5 4L7 15l-5-5 7-1z"/></svg></div>
-        <h3>Quality</h3>
-        <p>Every drawing checked twice, every pour inspected before it's too late to fix.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="why-corner tl"></span><span class="why-corner br"></span>
-        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>Experience</h3>
-        <p>15+ years reading soil, sites and clients — mistakes get caught early.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="why-corner tl"></span><span class="why-corner br"></span>
-        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>Transparency</h3>
-        <p>Itemised BOQs and a running site log — no surprise costs at handover.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="why-corner tl"></span><span class="why-corner br"></span>
-        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg></div>
-        <h3>Safety</h3>
-        <p>Site protocols followed on every job, from scaffolding to signage.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="why-corner tl"></span><span class="why-corner br"></span>
-        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>Affordable</h3>
-        <p>Estimates built to your actual budget, not padded for margin.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="why-corner tl"></span><span class="why-corner br"></span>
-        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Professional Team</h3>
-        <p>A vetted network of surveyors, masons and draftsmen on call.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;04 — SERVICES</p>
-      <h2 class="section-title">What I bring<br>to your project</h2>
-      <p class="section-sub">From the first survey peg to the final municipality stamp — end‑to‑end civil sub‑engineering services.</p>
-    </div>
-
-    <div class="services-grid">
-      <!-- service cards injected via template below -->
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" alt="Building supervision"></div>
-        <div class="service-body">
-          <span class="service-icon">01</span>
-          <h3>Building Supervision</h3>
-          <p>On‑site quality checks at every construction stage, from footing to finishing.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=800&auto=format&fit=crop" alt="Site survey"></div>
-        <div class="service-body">
-          <span class="service-icon">02</span>
-          <h3>Site Survey</h3>
-          <p>Topographic and boundary survey using total station and GPS instruments.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1545165375-77e2b8aa1f4d?q=80&w=800&auto=format&fit=crop" alt="Road construction"></div>
-        <div class="service-body">
-          <span class="service-icon">03</span>
-          <h3>Road Construction</h3>
-          <p>Alignment, grading and pavement supervision for rural and urban roads.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=800&auto=format&fit=crop" alt="Bridge inspection"></div>
-        <div class="service-body">
-          <span class="service-icon">04</span>
-          <h3>Bridge Inspection</h3>
-          <p>Structural condition assessment and maintenance recommendations.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?q=80&w=800&auto=format&fit=crop" alt="House planning"></div>
-        <div class="service-body">
-          <span class="service-icon">05</span>
-          <h3>House Planning</h3>
-          <p>Layout planning tailored to plot size, orientation and family needs.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?q=80&w=800&auto=format&fit=crop" alt="AutoCAD drawing"></div>
-        <div class="service-body">
-          <span class="service-icon">06</span>
-          <h3>AutoCAD Drawing</h3>
-          <p>Working drawings, sections and details prepared to municipal standard.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="BOQ preparation"></div>
-        <div class="service-body">
-          <span class="service-icon">07</span>
-          <h3>BOQ Preparation</h3>
-          <p>Itemised bill of quantities so costs are clear before work begins.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop" alt="Estimate preparation"></div>
-        <div class="service-body">
-          <span class="service-icon">08</span>
-          <h3>Estimate Preparation</h3>
-          <p>Detailed cost estimates aligned with current district rate schedules.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Project consultancy"></div>
-        <div class="service-body">
-          <span class="service-icon">09</span>
-          <h3>Project Consultancy</h3>
-          <p>Independent advice on feasibility, sequencing and contractor selection.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-media"><img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=800&auto=format&fit=crop" alt="Municipality approval"></div>
-        <div class="service-body">
-          <span class="service-icon">10</span>
-          <h3>Municipality Approval</h3>
-          <p>Drawing submission and liaison support to secure permits on time.</p>
-          <a href="#contact" class="service-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROJECTS ============ -->
-<section class="projects" id="projects">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;05 — PORTFOLIO</p>
-      <h2 class="section-title">Selected work,<br>on record</h2>
-    </div>
-
-    <div class="filter-bar reveal" id="filterBar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="residential">Residential</button>
-      <button class="filter-btn" data-filter="commercial">Commercial</button>
-      <button class="filter-btn" data-filter="government">Government</button>
-      <button class="filter-btn" data-filter="road">Road</button>
-      <button class="filter-btn" data-filter="bridge">Bridge</button>
-      <button class="filter-btn" data-filter="hospital">Hospital</button>
-      <button class="filter-btn" data-filter="school">School</button>
-    </div>
-
-    <div class="projects-grid" id="projectsGrid">
-
-      <article class="project-card reveal" data-cat="residential">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=900&auto=format&fit=crop" alt="Shrestha Residence"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Shrestha Residence</h3>
-          <div class="project-meta">
-            <span>Butwal‑7</span><span>Rs 42,00,000</span><span>Mar 2024</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="government hospital">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=900&auto=format&fit=crop" alt="Ward Health Post"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Ward Health Post Block</h3>
-          <div class="project-meta">
-            <span>Rupandehi</span><span>Rs 1,85,00,000</span><span>Nov 2023</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="road">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1545186488-9fe7893b1b62?q=80&w=900&auto=format&fit=crop" alt="Rural Access Road"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Rural Access Road, 3.2 km</h3>
-          <div class="project-meta">
-            <span>Devdaha</span><span>Rs 96,50,000</span><span>Jun 2023</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="bridge government">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=900&auto=format&fit=crop" alt="Suspended Footbridge"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Tinau Footbridge</h3>
-          <div class="project-meta">
-            <span>Tinau River</span><span>Rs 64,00,000</span><span>Feb 2023</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="commercial">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=900&auto=format&fit=crop" alt="Traders Complex"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Milan Traders Complex</h3>
-          <div class="project-meta">
-            <span>Butwal‑11</span><span>Rs 3,10,00,000</span><span>Sep 2022</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="school government">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=900&auto=format&fit=crop" alt="Secondary School Block"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Janata Secondary School Block</h3>
-          <div class="project-meta">
-            <span>Tilottama</span><span>Rs 1,20,00,000</span><span>May 2022</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="residential">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=900&auto=format&fit=crop" alt="Karki Residence"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Karki Residence</h3>
-          <div class="project-meta">
-            <span>Butwal‑4</span><span>Rs 38,50,000</span><span>Jan 2022</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-cat="government">
-        <div class="project-img"><img src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=900&auto=format&fit=crop" alt="Ward Office Building"></div>
-        <div class="project-overlay">
-          <button class="btn btn-sm btn-accent view-details-btn">View Details</button>
-        </div>
-        <div class="project-info">
-          <h3>Ward Office Building</h3>
-          <div class="project-meta">
-            <span>Rupandehi</span><span>Rs 78,00,000</span><span>Aug 2021</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ COUNTER (dark) ============ -->
-<section class="counter-dark" id="counterDark">
-  <div class="counter-blueprint"></div>
-  <div class="container counter-grid">
-    <div class="cstat reveal" data-count="15">
-      <span class="cstat-num"><span class="num">0</span>+</span>
-      <span class="cstat-label">Years Experience</span>
-    </div>
-    <div class="cstat reveal" data-count="500">
-      <span class="cstat-num"><span class="num">0</span>+</span>
-      <span class="cstat-label">Projects</span>
-    </div>
-    <div class="cstat reveal" data-count="120">
-      <span class="cstat-num"><span class="num">0</span>+</span>
-      <span class="cstat-label">Government Works</span>
-    </div>
-    <div class="cstat reveal" data-count="98">
-      <span class="cstat-num"><span class="num">0</span>%</span>
-      <span class="cstat-label">Success Rate</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WORKING PROCESS ============ -->
-<section class="process" id="process">
-  <div class="container">
-    <div class="section-head center reveal">
-      <p class="eyebrow center"><span class="eyebrow-dot"></span>FIG.&nbsp;06 — PROCESS</p>
-      <h2 class="section-title">How a project<br>moves from idea to key</h2>
-    </div>
-
-    <div class="process-line">
-      <div class="process-step reveal">
-        <span class="process-num">01</span>
-        <h3>Consultation</h3>
-        <p>We walk the site or plot together and talk through what you actually need.</p>
-      </div>
-      <div class="process-step reveal">
-        <span class="process-num">02</span>
-        <h3>Survey</h3>
-        <p>Levels, boundaries and soil conditions are recorded before anything is designed.</p>
-      </div>
-      <div class="process-step reveal">
-        <span class="process-num">03</span>
-        <h3>Planning</h3>
-        <p>Drawings, BOQ and municipality documents are prepared and submitted.</p>
-      </div>
-      <div class="process-step reveal">
-        <span class="process-num">04</span>
-        <h3>Construction</h3>
-        <p>Regular site supervision keeps the build on drawing, on code, on schedule.</p>
-      </div>
-      <div class="process-step reveal">
-        <span class="process-num">05</span>
-        <h3>Completion</h3>
-        <p>Final inspection, as‑built drawings and handover documentation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="testimonials" id="testimonials">
-  <div class="container">
-    <div class="section-head center reveal">
-      <p class="eyebrow center"><span class="eyebrow-dot"></span>FIG.&nbsp;07 — TESTIMONIALS</p>
-      <h2 class="section-title">What clients say<br>after handover</h2>
-    </div>
-
-    <div class="testi-slider reveal">
-      <div class="testi-track" id="testiTrack">
-        <div class="testi-card">
-          <span class="testi-quote">&ldquo;</span>
-          <div class="testi-rating">★★★★★</div>
-          <p>Sundar caught a boundary error before we poured the foundation. That single visit probably saved us months of dispute.</p>
-          <div class="testi-person">
-            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100&auto=format&fit=crop" alt="Rita Shrestha">
-            <div><strong>Rita Shrestha</strong><span>Homeowner, Butwal‑7</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <span class="testi-quote">&ldquo;</span>
-          <div class="testi-rating">★★★★★</div>
-          <p>The BOQ he prepared for our ward office came in almost exactly on budget — no change orders, no arguments.</p>
-          <div class="testi-person">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop" alt="Bishnu Poudel">
-            <div><strong>Bishnu Poudel</strong><span>Ward Chairperson</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <span class="testi-quote">&ldquo;</span>
-          <div class="testi-rating">★★★★★</div>
-          <p>Site visits every week, photos shared, nothing hidden. That's rare from a sub‑engineer these days.</p>
-          <div class="testi-person">
-            <img src="https://images.unsplash.com/photo-1601412436009-d964bd02edbc?q=80&w=100&auto=format&fit=crop" alt="Milan Traders">
-            <div><strong>Prakash Karki</strong><span>Milan Traders Complex</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-dots" id="testiDots"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GALLERY ============ -->
-<section class="gallery" id="gallery">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;08 — GALLERY</p>
-      <h2 class="section-title">From the field</h2>
-    </div>
-  </div>
-  <div class="masonry" id="masonry">
-    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop" alt="Survey team on site" class="masonry-item span-2">
-    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Building under construction" class="masonry-item">
-    <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?q=80&w=600&auto=format&fit=crop" alt="Concrete pour" class="masonry-item">
-    <img src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=600&auto=format&fit=crop" alt="Government building" class="masonry-item span-2-row">
-    <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=600&auto=format&fit=crop" alt="Blueprint review" class="masonry-item">
-    <img src="https://images.unsplash.com/photo-1590644365607-1c5a94b3f6df?q=80&w=600&auto=format&fit=crop" alt="Rebar installation" class="masonry-item">
-    <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?q=80&w=600&auto=format&fit=crop" alt="Road construction machinery" class="masonry-item span-2">
-    <img src="https://images.unsplash.com/photo-1590496793907-8961d7ee0b56?q=80&w=600&auto=format&fit=crop" alt="Total station survey" class="masonry-item">
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-  <img src="" alt="" id="lightboxImg">
-</div>
-
-<!-- ============ TEAM ============ -->
-<section class="team" id="team">
-  <div class="container">
-    <div class="section-head center reveal">
-      <p class="eyebrow center"><span class="eyebrow-dot"></span>FIG.&nbsp;09 — THE TEAM</p>
-      <h2 class="section-title">The people<br>behind the drawings</h2>
-    </div>
-
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop" alt="Sundar Thapa"></div>
-        <h3>Sundar Thapa</h3>
-        <span>Principal Sub‑Engineer</span>
-        <div class="team-social">
-          <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Email">@</a>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-img"><img src="https://images.unsplash.com/photo-1601412436009-d964bd02edbc?q=80&w=500&auto=format&fit=crop" alt="Amrit Gurung"></div>
-        <h3>Amrit Gurung</h3>
-        <span>Site Surveyor</span>
-        <div class="team-social">
-          <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Email">@</a>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-img"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=500&auto=format&fit=crop" alt="Sabina Rai">
-        </div>
-        <h3>Sabina Rai</h3>
-        <span>AutoCAD Draftsperson</span>
-        <div class="team-social">
-          <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Email">@</a>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-img"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop" alt="Dipesh Malla"></div>
-        <h3>Dipesh Malla</h3>
-        <span>Site Supervisor</span>
-        <div class="team-social">
-          <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Email">@</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BLOG ============ -->
-<section class="blog" id="blog">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;10 — JOURNAL</p>
-      <h2 class="section-title">Notes from site<br>&amp; office</h2>
-    </div>
-
-    <div class="blog-grid">
-      <article class="blog-feature reveal">
-        <div class="blog-img"><img src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1000&auto=format&fit=crop" alt="Municipality approval documents"></div>
-        <div class="blog-body">
-          <span class="blog-tag">Approvals</span>
-          <h3>What actually delays a municipality approval</h3>
-          <p>After 15 years of submissions, here are the five documentation mistakes that push a permit back by weeks — and how to avoid every one of them.</p>
-          <span class="blog-meta">12 Jul 2026 · 6 min read</span>
-        </div>
-      </article>
-
-      <div class="blog-small-list">
-        <article class="blog-small reveal">
-          <div class="blog-small-img"><img src="https://images.unsplash.com/photo-1590644365607-1c5a94b3f6df?q=80&w=300&auto=format&fit=crop" alt="Rebar spacing"></div>
-          <div>
-            <span class="blog-tag">Structural</span>
-            <h4>Rebar spacing errors we still see on small sites</h4>
-            <span class="blog-meta">28 Jun 2026</span>
-          </div>
-        </article>
-        <article class="blog-small reveal">
-          <div class="blog-small-img"><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=300&auto=format&fit=crop" alt="BOQ spreadsheet"></div>
-          <div>
-            <span class="blog-tag">Estimation</span>
-            <h4>Reading a BOQ before you sign a contractor</h4>
-            <span class="blog-meta">14 Jun 2026</span>
-          </div>
-        </article>
-        <article class="blog-small reveal">
-          <div class="blog-small-img"><img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?q=80&w=300&auto=format&fit=crop" alt="Road base compaction"></div>
-          <div>
-            <span class="blog-tag">Roads</span>
-            <h4>Why compaction testing isn't optional</h4>
-            <span class="blog-meta">02 Jun 2026</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="faq" id="faq">
-  <div class="container faq-grid">
-    <div class="reveal">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;11 — FAQ</p>
-      <h2 class="section-title">Questions clients<br>ask before we start</h2>
-      <p class="section-sub">Can't find your answer here? Reach out directly through the contact form.</p>
-    </div>
-
-    <div class="faq-list reveal">
-      <div class="faq-item active">
-        <button class="faq-q">
-          Do you work on plots under 4 aana?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        <button class="action-icon-btn cart-trigger-btn" aria-label="Open Shopping Cart Bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count cart-count-badge">0</span>
         </button>
-        <div class="faq-a"><p>Yes — plot size doesn't change the process, only the scope of the survey and drawing set.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          How long does a full house drawing set take?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>Typically 10–15 working days from survey to municipality‑ready submission, depending on plot complexity.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Can you supervise a project you didn't design?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>Yes, supervision‑only engagements are common — I'll review the existing drawings first before agreeing to the scope.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Do you provide a written BOQ before work starts?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>Always. An itemised bill of quantities is shared and agreed before any contractor is engaged.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">
-          Which districts do you currently serve?
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-a"><p>Rupandehi, Kapilvastu, Nawalparasi and Palpa, with travel arrangements possible for larger contracts.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="container contact-grid">
-    <div class="contact-map reveal">
-      <iframe
-        src="https://www.google.com/maps?q=Butwal,Nepal&output=embed"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade" title="Office location map"></iframe>
-      <div class="contact-card-float">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div><strong>Office</strong><span>Traffic Chowk, Butwal‑8, Nepal</span></div>
-      </div>
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+      <button onclick="UIManager.closeMobileNav()" class="close-btn" aria-label="Close menu">&times;</button>
     </div>
+    
+    <nav class="mobile-nav-list">
+      <a href="shop.html?category=women" class="mobile-nav-link">Women <span>&rarr;</span></a>
+      <a href="shop.html?category=men" class="mobile-nav-link">Men <span>&rarr;</span></a>
+      <a href="shop.html?category=kids" class="mobile-nav-link">Kids <span>&rarr;</span></a>
+      <a href="shop.html?category=accessories" class="mobile-nav-link">Accessories <span>&rarr;</span></a>
+      <a href="shop.html?filter=new" class="mobile-nav-link">New Arrivals <span>&rarr;</span></a>
+      <a href="offers.html" class="mobile-nav-link" style="color: var(--color-sale);">Special Sale <span>&rarr;</span></a>
+      <a href="about.html" class="mobile-nav-link">Our Story <span>&rarr;</span></a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us <span>&rarr;</span></a>
+    </nav>
+  </aside>
 
-    <div class="contact-form-wrap reveal">
-      <p class="eyebrow"><span class="eyebrow-dot"></span>FIG.&nbsp;12 — GET IN TOUCH</p>
-      <h2 class="section-title">Let's talk about<br>your project</h2>
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
 
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <div class="form-field">
-            <input type="text" id="cf-name" required placeholder=" ">
-            <label for="cf-name">Full Name</label>
-          </div>
-          <div class="form-field">
-            <input type="tel" id="cf-phone" required placeholder=" ">
-            <label for="cf-phone">Phone Number</label>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="src/assets/images/hero_fashion_banner_1786432390221.jpg" alt="AURA High Fashion Editorial Banner" class="hero-bg">
+      <div class="hero-overlay"></div>
+
+      <div class="container" style="position: relative; width: 100%;">
+        <div class="hero-content reveal active">
+          <span class="hero-tag">AUTUMN / WINTER 2026</span>
+          <h1 class="hero-title">DEFINE YOUR EVERYDAY STYLE</h1>
+          <p class="hero-description">Modern silhouettes. Timeless confidence. Meticulously crafted using sustainable Italian fabrics.</p>
+          
+          <div class="hero-actions">
+            <a href="shop.html?category=women" class="btn btn-primary">SHOP WOMEN</a>
+            <a href="shop.html?category=men" class="btn btn-secondary">SHOP MEN</a>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-field">
-            <input type="email" id="cf-email" required placeholder=" ">
-            <label for="cf-email">Email Address</label>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title-wrapper reveal">
+          <span class="section-subtitle">DISCOVER COLLECTIONS</span>
+          <h2 class="section-title">CURATED FASHION CATEGORIES</h2>
+        </div>
+
+        <div class="categories-grid">
+          <a href="shop.html?category=women" class="category-card reveal delay-1">
+            <img src="src/assets/images/category_women_1786432406848.jpg" alt="Women's Collection" class="category-img" loading="lazy">
+            <div class="category-overlay">
+              <h3 class="category-name">WOMEN</h3>
+              <span class="category-link-text">SHOP NOW &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?category=men" class="category-card reveal delay-2">
+            <img src="src/assets/images/category_men_1786432421440.jpg" alt="Men's Collection" class="category-img" loading="lazy">
+            <div class="category-overlay">
+              <h3 class="category-name">MEN</h3>
+              <span class="category-link-text">SHOP NOW &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?category=kids" class="category-card reveal delay-3">
+            <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=800&auto=format&fit=crop" alt="Kids Collection" class="category-img" loading="lazy">
+            <div class="category-overlay">
+              <h3 class="category-name">KIDS</h3>
+              <span class="category-link-text">SHOP NOW &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?category=accessories" class="category-card reveal delay-4">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop" alt="Accessories Collection" class="category-img" loading="lazy">
+            <div class="category-overlay">
+              <h3 class="category-name">ACCESSORIES</h3>
+              <span class="category-link-text">SHOP NOW &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reusable Nepalese Festive Campaign Banner Container -->
+    <div id="nepal-campaign-banner-wrapper" class="container" style="margin-top: 1rem;"></div>
+
+    <!-- New Arrivals Section -->
+    <section class="section" style="background-color: var(--color-surface);">
+      <div class="container">
+        <div class="section-title-wrapper reveal">
+          <span class="section-subtitle">SEASONAL EDIT '26</span>
+          <h2 class="section-title">NEW ARRIVALS</h2>
+        </div>
+
+        <div id="new-arrivals-grid" class="product-grid reveal">
+          <!-- Populated dynamically via main.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="shop.html" class="btn btn-secondary">VIEW ALL PRODUCTS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial / Trending Section -->
+    <section class="editorial-section">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="editorial-image-box reveal">
+            <img src="src/assets/images/category_women_1786432406848.jpg" alt="Editorial Fashion Portrait">
           </div>
-          <div class="form-field">
-            <input type="text" id="cf-subject" required placeholder=" ">
-            <label for="cf-subject">Subject</label>
+
+          <div class="editorial-content reveal delay-2">
+            <span class="editorial-tag">EDITORIAL SPOTLIGHT</span>
+            <h2 class="editorial-title">THE MODERN UNIFORM</h2>
+            <p class="editorial-text">"True style lies in the unspoken balance of form, function, and quiet confidence. Designed to move effortlessly from dawn till dusk."</p>
+            <p class="editorial-text">Our latest capsule collection pairs architectural tailoring with heavenly cashmere-silk knits, designed for individuals who appreciate timeless luxury.</p>
+            <a href="offers.html" class="btn btn-primary">EXPLORE LOOKBOOK</a>
           </div>
         </div>
-        <div class="form-field">
-          <textarea id="cf-message" rows="4" required placeholder=" "></textarea>
-          <label for="cf-message">Tell me about your project</label>
+      </div>
+    </section>
+
+    <!-- Promotional Sale Banner -->
+    <section class="sale-banner">
+      <div class="container sale-banner-inner reveal">
+        <span class="sale-badge-pill">LIMITED TIME PROMOTION</span>
+        <h2 class="sale-banner-title">UP TO 50% OFF</h2>
+        <p class="sale-banner-sub">Seasonal styles at exceptional prices. Offer ends soon.</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span id="count-hours" class="countdown-number">18</span>
+            <span class="countdown-label">HOURS</span>
+          </div>
+          <div class="countdown-item">
+            <span id="count-mins" class="countdown-number">42</span>
+            <span class="countdown-label">MINUTES</span>
+          </div>
+          <div class="countdown-item">
+            <span id="count-secs" class="countdown-number">15</span>
+            <span class="countdown-label">SECONDS</span>
+          </div>
         </div>
-        <button type="submit" class="btn btn-accent btn-lg btn-ripple full">
-          Send Message
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-        </button>
-        <p class="form-note" id="formNote"></p>
-      </form>
+
+        <a href="offers.html" class="btn btn-accent">SHOP SALE NOW</a>
+      </div>
+    </section>
+
+    <!-- Features / Trust Section -->
+    <section class="section">
+      <div class="container">
+        <div class="features-grid reveal">
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div class="feature-info">
+              <h4>Free Shipping</h4>
+              <p>On orders over NPR 3,000</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <div class="feature-info">
+              <h4>Secure Payment</h4>
+              <p>100% encrypted checkout</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+            </div>
+            <div class="feature-info">
+              <h4>Easy Returns</h4>
+              <p>30 days hassle-free return</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="feature-info">
+              <h4>Customer Support</h4>
+              <p>Dedicated 24/7 service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" style="background-color: var(--color-surface-secondary);">
+      <div class="container">
+        <div class="section-title-wrapper reveal">
+          <span class="section-subtitle">CLIENT REVIEWS</span>
+          <h2 class="section-title">WHAT OUR CLIENTS SAY</h2>
+        </div>
+
+        <div class="testimonials-wrapper">
+          <div id="testimonial-card-container">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <div class="testimonial-nav">
+            <button class="btn-icon" onclick="prevTestimonial()" aria-label="Previous review">&larr;</button>
+            <button class="btn-icon" onclick="nextTestimonial()" aria-label="Next review">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section">
+      <div class="container">
+        <div class="newsletter-box reveal">
+          <span class="section-subtitle">STAY CONNECTED</span>
+          <h2 class="section-title">STYLE, DELIVERED.</h2>
+          <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Join our community for new arrivals, exclusive offers, and private fashion inspiration.</p>
+          
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">AURA<span>STUDIOS</span></a>
+          <p class="footer-about">AURA Studios is a modern fashion label committed to sustainable luxury, tailored silhouettes, and timeless everyday confidence.</p>
+          
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+            <a href="#" class="social-icon" aria-label="TikTok">TT</a>
+            <a href="#" class="social-icon" aria-label="Pinterest">PT</a>
+            <a href="#" class="social-icon" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Shop Categories</h5>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women's Collection</a></li>
+            <li><a href="shop.html?category=men">Men's Apparel</a></li>
+            <li><a href="shop.html?category=kids">Kids Fashion</a></li>
+            <li><a href="shop.html?category=accessories">Leather Goods</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Customer Care</h5>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="contact.html">Shipping & Delivery</a></li>
+            <li><a href="contact.html">Returns & Exchanges</a></li>
+            <li><a href="contact.html">Track Order</a></li>
+            <li><a href="contact.html">Size Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About AURA</a></li>
+            <li><a href="about.html">Sustainability</a></li>
+            <li><a href="about.html">Careers</a></li>
+            <li><a href="contact.html">Store Locator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 AURA Fashion Studios. All rights reserved.</div>
+        <div class="payment-methods">
+          <span style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">ACCEPTED PAYMENTS: VISA &bull; MASTERCARD &bull; AMEX &bull; eSEWA &bull; KHALTI</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-</main>
+  <!-- Slide-Over Mini Cart Drawer -->
+  <aside class="cart-drawer" aria-label="Shopping Bag Drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Shopping Bag</h3>
+      <button id="close-cart-drawer" class="close-btn" aria-label="Close Bag">&times;</button>
+    </div>
 
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="footer-blueprint"></div>
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#home" class="logo footer-logo">
-        <span class="logo-mark">
-          <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-            <rect x="1" y="1" width="38" height="38" rx="8" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M10 28V14L20 8L30 14V28" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-            <path d="M14 28V19H26V28" stroke="currentColor" stroke-width="1.6"/>
-            <line x1="10" y1="28" x2="30" y2="28" stroke="currentColor" stroke-width="1.6"/>
-          </svg>
-        </span>
-        <span class="logo-text">
-          <strong>SUNDAR&nbsp;THAPA</strong>
-          <em>Civil Sub&#8209;Engineer</em>
-        </span>
-      </a>
-      <p>Licensed civil sub‑engineering practice serving Rupandehi and neighbouring districts since 2009.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a>
+    <div class="shipping-progress-bar">
+      <div id="shipping-progress-text">Add items to qualify for FREE Shipping</div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width: 0%;"></div>
       </div>
     </div>
 
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
+    <div class="cart-drawer-body">
+      <!-- Rendered dynamically -->
     </div>
 
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="#services">Building Supervision</a>
-      <a href="#services">Site Survey</a>
-      <a href="#services">AutoCAD Drawing</a>
-      <a href="#services">BOQ Preparation</a>
-      <a href="#services">Municipality Approval</a>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-drawer-subtotal">NPR 0</span>
+      </div>
+      <a href="cart.html" class="btn btn-secondary" style="width: 100%;">VIEW SHOPPING BAG</a>
+      <a href="checkout.html" class="btn btn-primary" style="width: 100%;">PROCEED TO CHECKOUT</a>
     </div>
+  </aside>
 
-    <div class="footer-col footer-newsletter">
-      <h4>Newsletter</h4>
-      <p>Short, occasional notes on site practice — no spam.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" placeholder="Your email" required>
-        <button type="submit" aria-label="Subscribe">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </form>
-    </div>
-  </div>
+  <!-- Global Live Search Drawer -->
+  <div class="search-drawer" aria-label="Product Search">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <span style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-accent);">SEARCH CATALOG</span>
+        <button onclick="UIManager.closeSearch()" class="close-btn" aria-label="Close Search">&times;</button>
+      </div>
 
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <span>© <span id="year"></span> Sundar Thapa. All rights reserved.</span>
-      <span class="footer-titleblock">DWG&nbsp;NO. STE&#8209;2026&#8209;01&nbsp;·&nbsp;SCALE&nbsp;N.T.S.</span>
+      <div class="search-input-box">
+        <input type="text" id="global-search-input" placeholder="Search by product name, category, or keyword..." style="background: none; border: none; outline: none; width: 100%;">
+      </div>
+
+      <div id="search-results-grid" class="product-grid" style="margin-top: 2rem; max-height: 50vh; overflow-y: auto;">
+        <!-- Filtered results -->
+      </div>
     </div>
   </div>
-</footer>
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" aria-label="Scroll back to top">
+    &uarr;
+  </button>
 
-<script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/nepalConfig.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
