@@ -3172,6 +3172,60 @@ ul, ol {
 }
 
 /* ==========================================================================
+   PAYMENT BRAND & BADGE SYSTEM
+   ========================================================================== */
+.payment-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  line-height: 1.2;
+}
+
+.payment-brand--esewa {
+  background-color: #60BB46;
+  color: #FFFFFF;
+}
+
+.payment-brand--khalti {
+  background-color: #5C2D91;
+  color: #FFFFFF;
+}
+
+.payment-brand--cod,
+.payment-brand--bank_transfer {
+  font-size: 1.25rem;
+  padding: 0;
+  background-color: transparent;
+}
+
+.payment-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.payment-badge--esewa {
+  color: #60BB46;
+  background-color: #E8F5E9;
+}
+
+.payment-badge--khalti {
+  color: #5C2D91;
+  background-color: #F3E5F5;
+}
+
+.payment-badge--cod,
+.payment-badge--bank_transfer {
+  color: var(--color-primary);
+  background-color: var(--color-surface-secondary);
+}
+
+/* ==========================================================================
    WISHLIST PAGE SPECIFIC STYLES
    ========================================================================== */
 .wishlist-page-header {

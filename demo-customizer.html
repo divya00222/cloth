@@ -274,6 +274,8 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/campaigns.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/nepalConfig.js"></script>
@@ -288,10 +290,11 @@
 
     function renderPresetButtons() {
       const container = document.getElementById('campaign-presets-list');
-      if (!container || typeof NEPAL_CONFIG === 'undefined') return;
+      const campaignObj = (typeof CAMPAIGNS_CONFIG !== 'undefined') ? CAMPAIGNS_CONFIG : ((typeof NEPAL_CONFIG !== 'undefined') ? NEPAL_CONFIG : null);
+      if (!container || !campaignObj) return;
 
-      const active = NEPAL_CONFIG.getActiveCampaign();
-      const camps = NEPAL_CONFIG.campaigns;
+      const active = campaignObj.getActiveCampaign();
+      const camps = campaignObj.campaigns;
 
       container.innerHTML = Object.keys(camps).map(key => {
         const c = camps[key];
@@ -306,19 +309,27 @@
     }
 
     function selectPreset(key) {
-      NEPAL_CONFIG.setActiveCampaign(key);
+      if (typeof CAMPAIGNS_CONFIG !== 'undefined') {
+        CAMPAIGNS_CONFIG.setActiveCampaign(key);
+      } else {
+        NEPAL_CONFIG.setActiveCampaign(key);
+      }
       renderPresetButtons();
       syncSummaryValues();
-      UIManager.showToast(`Active campaign set to: ${NEPAL_CONFIG.getActiveCampaign().name}`, "Campaign Switch");
+      const activeCamp = (typeof CAMPAIGNS_CONFIG !== 'undefined') ? CAMPAIGNS_CONFIG.getActiveCampaign() : NEPAL_CONFIG.getActiveCampaign();
+      UIManager.showToast(`Active campaign set to: ${activeCamp.name}`, "Campaign Switch");
     }
 
     function syncSummaryValues() {
-      const camp = NEPAL_CONFIG.getActiveCampaign();
-      document.getElementById('summary-active-camp').textContent = camp.name;
-      document.getElementById('summary-free-ship').textContent = ProductsAPI.formatPrice(NEPAL_CONFIG.shipping.freeShippingThreshold);
-      document.getElementById('summary-valley-rate').textContent = ProductsAPI.formatPrice(NEPAL_CONFIG.shipping.insideValley.rate);
-      document.getElementById('summary-outside-rate').textContent = ProductsAPI.formatPrice(NEPAL_CONFIG.shipping.outsideValley.rate);
-      document.getElementById('summary-whatsapp').textContent = '+' + NEPAL_CONFIG.contact.whatsappNumber;
+      const activeCamp = (typeof CAMPAIGNS_CONFIG !== 'undefined') ? CAMPAIGNS_CONFIG.getActiveCampaign() : NEPAL_CONFIG.getActiveCampaign();
+      const shipping = (typeof STORE_CONFIG !== 'undefined') ? STORE_CONFIG.shipping : NEPAL_CONFIG.shipping;
+      const contact = (typeof STORE_CONFIG !== 'undefined') ? STORE_CONFIG.contact : NEPAL_CONFIG.contact;
+
+      document.getElementById('summary-active-camp').textContent = activeCamp.name;
+      document.getElementById('summary-free-ship').textContent = ProductsAPI.formatPrice(shipping.freeShippingThreshold);
+      document.getElementById('summary-valley-rate').textContent = ProductsAPI.formatPrice(shipping.insideValley.rate);
+      document.getElementById('summary-outside-rate').textContent = ProductsAPI.formatPrice(shipping.outsideValley.rate);
+      document.getElementById('summary-whatsapp').textContent = '+' + contact.whatsappNumber;
       document.getElementById('summary-location').textContent = document.getElementById('input-store-addr').value;
     }
 
@@ -326,12 +337,23 @@
       const thresh = parseFloat(document.getElementById('input-shipping-threshold').value) || 3000;
       const valley = parseFloat(document.getElementById('input-shipping-valley').value) || 100;
       const outside = parseFloat(document.getElementById('input-shipping-outside').value) || 150;
-      const wa = document.getElementById('input-whatsapp-num').value.replace('+', '').trim() || '9779801234567';
+      const wa = document.getElementById('input-whatsapp-num').value.replace('+', '').trim() || '9779800000000';
+      const storeAddr = document.getElementById('input-store-addr').value;
 
-      NEPAL_CONFIG.shipping.freeShippingThreshold = thresh;
-      NEPAL_CONFIG.shipping.insideValley.rate = valley;
-      NEPAL_CONFIG.shipping.outsideValley.rate = outside;
-      NEPAL_CONFIG.contact.whatsappNumber = wa;
+      if (typeof STORE_CONFIG !== 'undefined') {
+        STORE_CONFIG.shipping.freeShippingThreshold = thresh;
+        STORE_CONFIG.shipping.insideValley.rate = valley;
+        STORE_CONFIG.shipping.outsideValley.rate = outside;
+        STORE_CONFIG.contact.whatsappNumber = wa;
+        STORE_CONFIG.contact.address = storeAddr;
+      }
+
+      if (typeof NEPAL_CONFIG !== 'undefined') {
+        NEPAL_CONFIG.shipping.freeShippingThreshold = thresh;
+        NEPAL_CONFIG.shipping.insideValley.rate = valley;
+        NEPAL_CONFIG.shipping.outsideValley.rate = outside;
+        NEPAL_CONFIG.contact.whatsappNumber = wa;
+      }
 
       UIManager.FREE_SHIPPING_THRESHOLD = thresh;
 
@@ -341,11 +363,15 @@
     }
 
     function resetCustomizerDefaults() {
-      NEPAL_CONFIG.setActiveCampaign('teej');
+      if (typeof CAMPAIGNS_CONFIG !== 'undefined') {
+        CAMPAIGNS_CONFIG.setActiveCampaign('teej');
+      } else {
+        NEPAL_CONFIG.setActiveCampaign('teej');
+      }
       document.getElementById('input-shipping-threshold').value = 3000;
       document.getElementById('input-shipping-valley').value = 100;
       document.getElementById('input-shipping-outside').value = 150;
-      document.getElementById('input-whatsapp-num').value = '9779801234567';
+      document.getElementById('input-whatsapp-num').value = '9779800000000';
       document.getElementById('input-store-addr').value = 'Durbar Marg, Ward No. 1, Kathmandu, Nepal';
 
       applyCustomizerSettings();

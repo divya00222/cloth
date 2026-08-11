@@ -49,7 +49,7 @@ const ProductDetailsController = {
   init() {
     this.loadProduct();
     if (!this.product) {
-      window.location.href = 'shop.html';
+      this.renderNotFound();
       return;
     }
 
@@ -64,26 +64,76 @@ const ProductDetailsController = {
 
   loadProduct() {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id') || 'aura-001';
-    this.product = ProductsAPI.getById(id);
-    if (!this.product) {
-      this.product = ProductsAPI.getAll()[0];
+    const id = params.get('id');
+    if (id) {
+      this.product = ProductsAPI.getById(id) || null;
+    } else {
+      this.product = ProductsAPI.getById('aura-001') || ProductsAPI.getAll()[0];
+    }
+  },
+
+  renderNotFound() {
+    document.title = "Product Not Found | AURA Fashion Studios";
+
+    const stickyBar = document.querySelector('.sticky-mobile-buy-bar');
+    if (stickyBar) {
+      stickyBar.style.display = 'none';
+    }
+
+    const mainContainer = document.querySelector('main.section .container');
+    if (mainContainer) {
+      mainContainer.innerHTML = `
+        <nav class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="shop.html">Shop</a>
+          <span class="sep">/</span>
+          <span class="current">Product Not Found</span>
+        </nav>
+
+        <div class="product-not-found-card text-center" style="padding: 5rem 1.5rem; max-width: 650px; margin: 2rem auto; background: var(--color-surface, #fff); border: 1px solid var(--color-border, #eee); border-radius: var(--radius-md, 8px); box-shadow: var(--shadow-subtle);">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-accent);">✦</div>
+          <span class="section-subtitle" style="letter-spacing: 0.15em; font-size: 0.8rem; color: var(--color-accent); font-weight: 600; display: block; margin-bottom: 0.5rem; text-transform: uppercase;">ATELIER CATALOG</span>
+          <h1 class="pdp-title" style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-primary);">PRODUCT NOT FOUND</h1>
+          <p style="color: var(--color-text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto;">
+            The piece you're looking for may have been moved or is no longer available.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="shop.html" class="btn btn-primary" style="padding: 0.9rem 2rem;">BACK TO SHOP</a>
+            <a href="shop.html" class="btn btn-secondary" style="padding: 0.9rem 2rem;">CONTINUE SHOPPING</a>
+          </div>
+        </div>
+      `;
     }
   },
 
   setupGallery() {
-    // Generate gallery image list (main, hover, plus 2 high quality detail shots)
-    const img1 = this.product.images.main;
-    const img2 = this.product.images.hover || img1;
-    
-    // Complementary fashion detail shots from Unsplash
-    const extraShots = [
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop"
-    ];
+    // Build gallery image list using only images belonging to this selected product
+    const images = [];
 
-    this.state.galleryImages = [img1, img2, extraShots[0], extraShots[1]];
+    if (this.product && this.product.images) {
+      if (this.product.images.main) {
+        images.push(this.product.images.main);
+      }
+
+      if (this.product.images.hover && !images.includes(this.product.images.hover)) {
+        images.push(this.product.images.hover);
+      }
+
+      if (Array.isArray(this.product.images.gallery)) {
+        this.product.images.gallery.forEach(img => {
+          if (img && typeof img === 'string' && !images.includes(img)) {
+            images.push(img);
+          }
+        });
+      }
+    }
+
+    if (images.length === 0) {
+      images.push("https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=800&auto=format&fit=crop");
+    }
+
+    this.state.galleryImages = images;
     this.state.currentImageIndex = 0;
   },
 
@@ -194,12 +244,25 @@ const ProductDetailsController = {
       mainImg.src = this.state.galleryImages[this.state.currentImageIndex];
       mainImg.alt = `${this.product.name} view ${this.state.currentImageIndex + 1}`;
     }
+
+    const prevBtn = document.getElementById('gallery-prev-btn');
+    const nextBtn = document.getElementById('gallery-next-btn');
+    const hasMultiple = this.state.galleryImages.length > 1;
+    if (prevBtn) prevBtn.style.display = hasMultiple ? 'flex' : 'none';
+    if (nextBtn) nextBtn.style.display = hasMultiple ? 'flex' : 'none';
   },
 
   renderThumbnails() {
     const container = document.getElementById('pdp-gallery-thumbs');
     if (!container) return;
 
+    if (this.state.galleryImages.length <= 1) {
+      container.style.display = 'none';
+      container.innerHTML = '';
+      return;
+    }
+
+    container.style.display = 'flex';
     container.innerHTML = this.state.galleryImages.map((src, i) => `
       <button class="thumb-btn ${i === this.state.currentImageIndex ? 'active' : ''}" 
               data-index="${i}" 

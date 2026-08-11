@@ -135,10 +135,10 @@
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <div style="display: flex; align-items: center; gap: 0.75rem;">
                     <input type="radio" name="payment_method" value="cod" checked>
-                    <span style="font-size: 1.25rem;">💵</span>
+                    <span class="payment-brand payment-brand--cod">💵</span>
                     <span style="font-weight: 700; color: var(--color-primary);">Cash on Delivery (COD)</span>
                   </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; background: var(--color-surface-secondary); padding: 0.2rem 0.5rem; border-radius: 4px;">Doorstep Cash</span>
+                  <span class="payment-badge payment-badge--cod">Doorstep Cash</span>
                 </div>
               </label>
 
@@ -147,10 +147,10 @@
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <div style="display: flex; align-items: center; gap: 0.75rem;">
                     <input type="radio" name="payment_method" value="esewa">
-                    <span style="background:#60BB46; color:#FFF; font-weight:800; padding:2px 8px; border-radius:4px; font-size:0.75rem;">eSewa</span>
+                    <span class="payment-brand payment-brand--esewa">eSewa</span>
                     <span style="font-weight: 700; color: var(--color-primary);">eSewa Digital Wallet</span>
                   </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #60BB46; background: #E8F5E9; padding: 0.2rem 0.5rem; border-radius: 4px;">Instant Wallet</span>
+                  <span class="payment-badge payment-badge--esewa">Instant Wallet</span>
                 </div>
               </label>
 
@@ -159,10 +159,10 @@
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <div style="display: flex; align-items: center; gap: 0.75rem;">
                     <input type="radio" name="payment_method" value="khalti">
-                    <span style="background:#5C2D91; color:#FFF; font-weight:800; padding:2px 8px; border-radius:4px; font-size:0.75rem;">Khalti</span>
+                    <span class="payment-brand payment-brand--khalti">Khalti</span>
                     <span style="font-weight: 700; color: var(--color-primary);">Khalti Digital Wallet</span>
                   </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #5C2D91; background: #F3E5F5; padding: 0.2rem 0.5rem; border-radius: 4px;">Scan & Pay</span>
+                  <span class="payment-badge payment-badge--khalti">Scan & Pay</span>
                 </div>
               </label>
 
@@ -171,10 +171,10 @@
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <div style="display: flex; align-items: center; gap: 0.75rem;">
                     <input type="radio" name="payment_method" value="bank_transfer">
-                    <span style="font-size: 1.25rem;">🏛️</span>
+                    <span class="payment-brand payment-brand--bank_transfer">🏛️</span>
                     <span style="font-weight: 700; color: var(--color-primary);">Direct Nepal Bank Transfer</span>
                   </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; background: var(--color-surface-secondary); padding: 0.2rem 0.5rem; border-radius: 4px;">Nabil / NIC Asia</span>
+                  <span class="payment-badge payment-badge--bank_transfer">Nabil / NIC Asia</span>
                 </div>
               </label>
 
@@ -234,6 +234,8 @@
   </section>
 
   <!-- Scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/campaigns.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/nepalConfig.js"></script>
@@ -310,29 +312,31 @@
       const box = document.getElementById('payment-instruction-box');
       if (!box) return;
 
+      const brandName = (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.brand) ? STORE_CONFIG.brand.fullName : 'AURA Fashion Studios Pvt. Ltd.';
+
       if (selectedPaymentMethod === 'cod') {
         box.innerHTML = `
-          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">💵 Cash on Delivery (COD) Selected</div>
+          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;"><span class="payment-brand payment-brand--cod">💵</span> Cash on Delivery (COD) Selected</div>
           <div>Please prepare exact cash in NPR upon delivery. Our logistics agent will call your provided mobile number (+977) before arrival.</div>
         `;
       } else if (selectedPaymentMethod === 'esewa') {
         box.innerHTML = `
-          <div style="font-weight: 700; color: #60BB46; margin-bottom: 0.25rem;">🟢 eSewa Digital Transfer (Demo)</div>
-          <div>Transfer total amount to eSewa ID: <strong>9801234567</strong> (AURA Fashion Studios Pvt. Ltd.)</div>
+          <div style="font-weight: 700; color: #60BB46; margin-bottom: 0.25rem;"><span class="payment-brand payment-brand--esewa">eSewa</span> Digital Transfer (Demo)</div>
+          <div>Transfer total amount to eSewa Merchant ID: <strong>DEMO-MERCHANT-ID</strong> (${brandName})</div>
           <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.35rem;">* Order will be verified instantly upon submitting this form.</div>
         `;
       } else if (selectedPaymentMethod === 'khalti') {
         box.innerHTML = `
-          <div style="font-weight: 700; color: #5C2D91; margin-bottom: 0.25rem;">🟣 Khalti Wallet Transfer (Demo)</div>
-          <div>Scan or Pay via Khalti ID: <strong>9801234567</strong> or Username <strong>@aurastudios</strong></div>
+          <div style="font-weight: 700; color: #5C2D91; margin-bottom: 0.25rem;"><span class="payment-brand payment-brand--khalti">Khalti</span> Wallet Transfer (Demo)</div>
+          <div>Scan or Pay via Khalti ID: <strong>DEMO-MERCHANT-ID</strong> or Username <strong>@aurastudios_demo</strong></div>
           <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.35rem;">* Order dispatched immediately after verification.</div>
         `;
       } else if (selectedPaymentMethod === 'bank_transfer') {
         box.innerHTML = `
-          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">🏛️ Direct Bank Transfer (Demo)</div>
+          <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;"><span class="payment-brand payment-brand--bank_transfer">🏛️</span> Direct Bank Transfer (Demo)</div>
           <div><strong>Bank:</strong> Nabil Bank Ltd. / NIC Asia Bank<br>
-          <strong>Account Name:</strong> AURA Fashion Studios Pvt. Ltd.<br>
-          <strong>Account Number:</strong> 00101017500123</div>
+          <strong>Account Name:</strong> ${brandName}<br>
+          <strong>Account Number:</strong> DEMO-ACCOUNT-NUMBER</div>
         `;
       }
     }

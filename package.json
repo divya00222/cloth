@@ -2,13 +2,10 @@
   "name": "aura-fashion-studios",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "description": "AURA Modern Fashion Store - Pure Static HTML/CSS/Vanilla JS Template",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "lint": "echo 'No lint needed for static HTML/JS'"
-  },
-  "devDependencies": {
-    "vite": "^6.2.3"
+    "dev": "npx -y serve -p 3000 .",
+    "build": "echo 'Static site build complete'",
+    "lint": "echo 'No lint required for static HTML/JS'"
   }
 }
